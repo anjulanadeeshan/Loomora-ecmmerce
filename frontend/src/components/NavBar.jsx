@@ -12,8 +12,10 @@ const NavBar = () => {
   const cartCount = getCartCount()
 
   useEffect(() => {
-    setIsAdmin(Boolean(localStorage.getItem('adminToken')))
-  }, [])
+    const adminToken = localStorage.getItem('adminToken')
+    const adminUser = localStorage.getItem('adminUser')
+    setIsAdmin(Boolean(adminToken && adminUser))
+  }, [location.pathname, user])
 
   useEffect(() => {
     setVisible(false)
@@ -45,8 +47,8 @@ const NavBar = () => {
       <div className='page-shell flex h-[88px] items-center justify-between gap-5'>
         <Link to='/' className='shrink-0' aria-label='Loomora home'>
           <img
-            src={assets.loomora_logo}
-            className={`h-10 w-28 object-contain sm:h-11 sm:w-32 ${isHome ? 'brightness-0 invert' : 'mix-blend-multiply'}`}
+            src={isHome ? assets.loomora_white : assets.loomora_black}
+            className='h-10 w-auto object-contain sm:h-11'
             alt='Loomora'
           />
         </Link>
@@ -75,30 +77,50 @@ const NavBar = () => {
             </Link>
           )}
 
-          <button
-            type='button'
-            onClick={handleSearch}
-            className={`hidden h-10 items-center gap-3 rounded-full border px-4 text-xs font-medium transition focus-visible:outline-none focus-visible:ring-2 xl:flex ${
-              isHome
-                ? 'border-white/25 bg-black/15 text-white/75 backdrop-blur hover:border-white/60 hover:text-white focus-visible:ring-white'
-                : 'border-[#ded7cc] bg-white text-[#746d65] hover:border-[#7d263d] focus-visible:ring-[#7d263d]'
-            }`}
-            aria-label='Search products'
-          >
-            <img src={assets.search_icon} className={`w-4 ${isHome ? 'brightness-0 invert' : ''}`} alt='' />
-            <span>Search the collection</span>
-          </button>
-          <button type='button' onClick={handleSearch} className={`${iconButtonClass} xl:hidden`} aria-label='Search products'>
+          <button type='button' onClick={handleSearch} className={iconButtonClass} aria-label='Search products'>
             <img src={assets.search_icon} className={`w-4 ${isHome ? 'brightness-0 invert' : ''}`} alt='' />
           </button>
 
-          <div className='group relative hidden lg:block'>
+          <Link
+            to='/cart'
+            className={`relative flex items-center transition focus-visible:outline-none focus-visible:ring-2 ${
+              isHome
+                ? 'h-10 gap-2 rounded-full border border-white/25 bg-black/15 px-4 text-white backdrop-blur hover:border-white/60 hover:bg-white/10 focus-visible:ring-white'
+                : `${iconButtonClass} h-10 w-10`
+            }`}
+            aria-label='Shopping bag'
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='1.75'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              className='w-[18px] h-[18px] shrink-0'
+              aria-hidden='true'
+            >
+              <path d='M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z' />
+              <line x1='3' x2='21' y1='6' y2='6' />
+              <path d='M16 10a4 4 0 0 1-8 0' />
+            </svg>
+            {isHome && <span className='text-xs font-semibold'>Bag</span>}
+            {cartCount > 0 && <span className='absolute -right-1 -top-1 grid h-4 min-w-4 place-items-center rounded-full bg-[#7d263d] px-1 text-[9px] text-white'>{cartCount}</span>}
+          </Link>
+
+          <div className='group relative'>
             <Link
               to={user ? '#' : '/login'}
-              className={`${isHome ? 'flex h-10 items-center px-2 text-xs font-semibold text-white/80 transition hover:text-white' : iconButtonClass}`}
+              className={iconButtonClass}
               aria-label={user ? 'Account menu' : 'Sign in'}
+              title={user ? 'Account' : 'Log in'}
             >
-              {isHome ? <span>{user ? 'Account' : 'Log in'}</span> : <img src={assets.profile_icon} className='w-4' alt='' />}
+              <img
+                src={assets.profile_icon}
+                className={`w-4 ${isHome ? 'brightness-0 invert' : ''}`}
+                alt=''
+              />
             </Link>
             {user && (
               <div className='invisible absolute right-0 top-full pt-3 opacity-0 transition-all group-hover:visible group-hover:opacity-100'>
@@ -111,16 +133,6 @@ const NavBar = () => {
             )}
           </div>
 
-          <Link
-            to='/cart'
-            className={`${iconButtonClass} relative ${isHome ? 'sm:w-auto sm:px-4' : ''}`}
-            aria-label='Shopping bag'
-          >
-            <img src={assets.cart_icon} className={`w-4 ${isHome ? 'brightness-0 invert' : ''}`} alt='' />
-            {isHome && <span className='ml-2 hidden text-xs font-semibold sm:inline'>Bag</span>}
-            {cartCount > 0 && <span className='absolute -right-1 -top-1 grid h-4 min-w-4 place-items-center rounded-full bg-[#7d263d] px-1 text-[9px] text-white'>{cartCount}</span>}
-          </Link>
-
           <button type='button' onClick={() => setVisible(true)} className={`${iconButtonClass} sm:hidden`} aria-label='Open menu'>
             <img src={assets.menu_icon} className={`w-4 ${isHome ? 'brightness-0 invert' : ''}`} alt='' />
           </button>
@@ -129,7 +141,7 @@ const NavBar = () => {
 
       <div className={`fixed inset-0 z-50 bg-[#f8f5ef] transition-transform duration-500 sm:hidden ${visible ? 'translate-x-0' : 'translate-x-full'}`} aria-hidden={!visible}>
         <div className='page-shell flex h-[88px] items-center justify-between border-b border-[#ded7cc]'>
-          <img src={assets.loomora_logo} className='h-10 w-28 object-contain mix-blend-multiply' alt='Loomora' />
+          <img src={assets.loomora_black} className='h-10 w-auto object-contain' alt='Loomora' />
           <button type='button' onClick={() => setVisible(false)} className='grid h-11 w-11 place-items-center rounded-full border border-[#ded7cc] text-xl text-[#1d1a17] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7d263d]' aria-label='Close menu'>×</button>
         </div>
         <nav className='page-shell flex flex-col gap-3 pt-10 text-[#1d1a17]'>

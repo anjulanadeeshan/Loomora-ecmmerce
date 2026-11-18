@@ -7,17 +7,17 @@ const Contact = () => {
     <main className="min-h-screen page-enter">
       
       {/* ----------------- Hero Section with Background Image ----------------- */}
-      <div className='page-shell relative mt-[92px] h-[460px] overflow-hidden rounded-[2rem]'>
-        <div className='absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent z-10'></div>
+      <div className='page-shell relative mt-[92px] h-[240px] sm:h-[280px] overflow-hidden rounded-[2rem]'>
+        <div className='absolute inset-0 z-10 bg-gradient-to-r from-[#15120f]/90 via-[#15120f]/60 to-[#15120f]/15'></div>
         <img 
           className='absolute inset-0 h-full w-full object-cover object-[50%_50%]'
           src={assets.contact_hero}
           alt="Contact Loomora"
         />
-        <div className='relative z-20 flex h-full flex-col justify-end px-7 pb-14 text-white sm:px-12 sm:pb-16'>
-          <p className='mb-4 text-[11px] font-bold uppercase tracking-[0.24em] text-[#dfbd91]'>Loomora concierge</p>
-          <h1 className='display-font mb-4 text-6xl md:text-7xl'>Get in touch</h1>
-          <p className='max-w-xl text-base font-light leading-7 text-white/80 md:text-lg'>We would love to hear from you. Reach out and let us make your Loomora experience exceptional.</p>
+        <div className='relative z-20 flex h-full flex-col justify-end px-7 pb-7 text-white sm:px-12 sm:pb-9'>
+          <p className='mb-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.24em] text-[#dfbd91]'>Loomora concierge</p>
+          <h1 className='display-font mb-2 text-4xl sm:text-5xl md:text-6xl'>Get in touch</h1>
+          <p className='max-w-xl text-xs sm:text-sm font-light leading-relaxed text-white/80 md:text-base'>We would love to hear from you. Reach out and let us make your Loomora experience exceptional.</p>
         </div>
       </div>
 

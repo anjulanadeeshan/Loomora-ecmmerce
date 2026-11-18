@@ -74,7 +74,12 @@ const updateOrderStatus = async (req, res) => {
     try {
         const { orderId, status } = req.body;
 
-        await Order.findByIdAndUpdate(orderId, { status });
+        const validStatuses = ['Order Placed', 'Packing', 'Shipped', 'Out for delivery', 'Delivered'];
+        if (!validStatuses.includes(status)) {
+            return res.json({ success: false, message: 'Invalid order status' });
+        }
+
+        await Order.findByIdAndUpdate(orderId, { status }, { runValidators: true });
 
         res.json({ success: true, message: 'Order status updated' });
 

@@ -13,7 +13,7 @@ const Hero = () => {
   ]
 
   return (
-    <section className='relative isolate min-h-[720px] overflow-hidden bg-[#211619] text-white sm:min-h-[760px] lg:min-h-[800px]'>
+    <section className='relative isolate min-h-[720px] overflow-hidden bg-[#211619] text-white sm:min-h-[760px] lg:min-h-screen'>
       <img
         src={assets.hero_img}
         alt='The latest Loomora fashion collection'
@@ -23,16 +23,16 @@ const Hero = () => {
       <div className='absolute inset-0 bg-[linear-gradient(180deg,rgba(12,9,10,0.58)_0%,transparent_24%,transparent_66%,rgba(12,9,10,0.78)_100%)]' />
       <div className='absolute inset-0 bg-[#7d263d]/20 mix-blend-multiply' />
 
-      <div className='page-shell relative z-10 flex min-h-[720px] flex-col justify-between pb-7 pt-36 sm:min-h-[760px] sm:pb-9 sm:pt-40 lg:min-h-[800px] lg:pt-44'>
+      <div className='page-shell relative z-10 flex min-h-[720px] flex-col justify-between pb-7 pt-36 sm:min-h-[760px] sm:pb-9 sm:pt-40 lg:min-h-screen lg:pt-44'>
         <div className='grid items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(300px,0.65fr)]'>
           <div className='max-w-3xl'>
             <button
               type='button'
               onClick={() => navigate('/collection')}
-              className='mb-7 inline-flex items-center gap-3 rounded-lg border border-white/25 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90 backdrop-blur-md transition hover:bg-white hover:text-[#211d1a]'
+              className='group mb-7 inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/90 transition hover:text-white'
             >
-              The 2026 edit
-              <span className='text-base text-[#ff6b9a]' aria-hidden='true'>→</span>
+              <span>The 2026 edit</span>
+              <span className='text-base text-[#ff6b9a] transition-transform duration-200 group-hover:translate-x-1' aria-hidden='true'>→</span>
             </button>
 
             <h1 className='max-w-3xl text-[3.25rem] font-semibold leading-[0.96] tracking-[-0.055em] sm:text-[4.75rem] lg:text-[5.6rem] xl:text-[6.25rem]'>
@@ -55,7 +55,7 @@ const Hero = () => {
               <button
                 type='button'
                 onClick={() => navigate('/about')}
-                className='inline-flex min-h-[3.25rem] items-center justify-center rounded-full border border-white/55 bg-black/15 px-7 text-[0.76rem] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm transition hover:border-white hover:bg-white hover:text-[#211d1a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white'
+                className='fashion-button fashion-button-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-transparent'
               >
                 Discover Loomora
               </button>

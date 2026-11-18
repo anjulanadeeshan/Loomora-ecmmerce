@@ -1,0 +1,1139 @@
+[
+  {
+    "_id": "6afd8b9860499bcfba7e4ed8",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992613/we0zh6nr1ucdbztasgzg.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:19.972Z",
+    "date": 1716634345448,
+    "description": "A women's cotton top with a classic round neckline, ready to pair with jeans, trousers, or a skirt for an easy everyday outfit.",
+    "name": "Women Round Neck Cotton Top",
+    "price": 20,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9860499bcfba7e4ed9",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992586/gqyeq4yok4tht7lvijsr.png",
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992586/cayxttcxhh7g0tkmohz4.png",
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992586/k2nkzh6pk6o1vapmbhqx.png",
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992586/oteb0sckctbzmjry3ljd.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:20.548Z",
+    "date": 1716621345448,
+    "description": "A men's pure cotton T-shirt with a simple round neck, offering a straightforward starting point for casual outfits and layered looks.",
+    "name": "Men Round Neck Pure Cotton T-shirt",
+    "price": 32,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9860499bcfba7e4eda",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992586/v0k8uoturtvwyrdcfhy4.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:20.628Z",
+    "date": 1716234545448,
+    "description": "A girls' round-neck cotton top for everyday dressing. Pair it with leggings, shorts, or a skirt to create a simple casual look.",
+    "name": "Girls Round Neck Cotton Top",
+    "price": 34.4,
+    "sizes": [
+      "S",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9860499bcfba7e4edb",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992587/z4xyhwjt1o29af3opti3.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:20.718Z",
+    "date": 1716621345448,
+    "description": "Keep casual dressing simple with this men's round-neck T-shirt in pure cotton. Wear it on its own with jeans or beneath an open shirt.",
+    "name": "Men Round Neck Pure Cotton T-shirt",
+    "price": 21.2,
+    "sizes": [
+      "S",
+      "M",
+      "XXL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9860499bcfba7e4edc",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992587/islny2ttx7eptzwsay2f.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:20.798Z",
+    "date": 1716622345448,
+    "description": "Build a casual outfit around this women's round-neck cotton top. Its simple neckline works well with denim and your favourite accessories.",
+    "name": "Women Round Neck Cotton Top",
+    "price": 23.6,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9860499bcfba7e4edd",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992588/tbzcjnt0mgzritw7sa0j.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:20.888Z",
+    "date": 1716623423448,
+    "description": "An everyday cotton top for girls, finished with a round neckline. Style it with casual trousers or a skirt for outings and time with friends.",
+    "name": "Girls Round Neck Cotton Top",
+    "price": 24.8,
+    "sizes": [
+      "S",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9860499bcfba7e4ede",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992588/vsfkl8rvzcyotmmnsgjj.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:20.989Z",
+    "date": 1716621542448,
+    "description": "Men's flat-front trousers with a tapered fit that narrows towards the ankle. Pair them with a shirt for a neat look or a T-shirt for casual styling.",
+    "name": "Men Tapered Fit Flat-Front Trousers",
+    "price": 30.8,
+    "sizes": [
+      "S",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4edf",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992588/ltzjgl9usd9tbvmrluav.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:21.068Z",
+    "date": 1716622345448,
+    "description": "A pure cotton round-neck T-shirt for men's everyday wardrobes. Combine it with chinos and trainers for an uncomplicated weekend outfit.",
+    "name": "Men Round Neck Pure Cotton T-shirt",
+    "price": 24.8,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee0",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992588/qyynau8vyj1bpkgox31d.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:21.158Z",
+    "date": 1716621235448,
+    "description": "A girls' cotton top with a round neck and an easy-to-style look. Match it with jeans or leggings for everyday activities.",
+    "name": "Girls Round Neck Cotton Top",
+    "price": 20,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee1",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992590/rqvyrbkup6apvg5lll0a.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:21.238Z",
+    "date": 1716622235448,
+    "description": "Give everyday outfits a sharper outline with these men's tapered flat-front trousers. A polo or casual shirt makes a natural pairing.",
+    "name": "Men Tapered Fit Flat-Front Trousers",
+    "price": 21.2,
+    "sizes": [
+      "S",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee2",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992589/umkv4om1ca1fy4qg0j8k.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:21.318Z",
+    "date": 1716623345448,
+    "description": "This men's pure cotton T-shirt features a round neckline for classic casual styling. Team it with denim and keep the rest of the look simple.",
+    "name": "Men Round Neck Pure Cotton T-shirt",
+    "price": 22.4,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee3",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992589/iswojaecu1qf5koscswn.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:21.408Z",
+    "date": 1716624445448,
+    "description": "A men's round-neck T-shirt made from pure cotton, suited to wearing alone or as the base of a layered outfit with a jacket or overshirt.",
+    "name": "Men Round Neck Pure Cotton T-shirt",
+    "price": 26,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee4",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992602/es9wsso9xjqy2kxlwjkn.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:21.505Z",
+    "date": 1716625545448,
+    "description": "A women's cotton top with a round neckline that makes outfit planning easy. Wear it tucked into palazzo pants or styled with everyday jeans.",
+    "name": "Women Round Neck Cotton Top",
+    "price": 23.6,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee5",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992601/g8l2vmdn7qowmoacp3qs.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:21.628Z",
+    "date": 1716626645448,
+    "description": "A boys' pure cotton T-shirt with a classic round neck. Pair it with shorts or casual trousers for a simple everyday outfit.",
+    "name": "Boy Round Neck Pure Cotton T-shirt",
+    "price": 27.2,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee6",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992590/vmt8wtrbf0dnlhihbyfh.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:21.709Z",
+    "date": 1716627745448,
+    "description": "These men's trousers combine a flat front with a tapered leg for a clean silhouette. Style them with a tucked-in shirt and your choice of footwear.",
+    "name": "Men Tapered Fit Flat-Front Trousers",
+    "price": 24.8,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee7",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992591/zm0usqn3gyz4ulowgu76.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:21.838Z",
+    "date": 1716628845448,
+    "description": "Add a simple staple to a girl's wardrobe with this round-neck cotton top. It pairs easily with shorts, denim, and other casual separates.",
+    "name": "Girls Round Neck Cotton Top",
+    "price": 28.4,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee8",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992591/qkbd6kdhee5e7vcxofkd.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:22.038Z",
+    "date": 1716629945448,
+    "description": "A pair of men's tapered trousers with a flat-front design, ready for outfits ranging from a casual T-shirt combination to a smarter shirt pairing.",
+    "name": "Men Tapered Fit Flat-Front Trousers",
+    "price": 26,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4ee9",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992603/fe4gcxosu43kpnc0jn1q.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:22.108Z",
+    "date": 1716631045448,
+    "description": "A boys' round-neck T-shirt in pure cotton for straightforward casual dressing. Wear it with jeans or layer it beneath an open jacket.",
+    "name": "Boy Round Neck Pure Cotton T-shirt",
+    "price": 29.6,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4eea",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992591/rafmtsqrexztqro94ugg.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:22.178Z",
+    "date": 1716632145448,
+    "description": "Keep a boy's everyday look simple with this pure cotton round-neck T-shirt. Match it with casual bottoms for weekends and family outings.",
+    "name": "Boy Round Neck Pure Cotton T-shirt",
+    "price": 27.2,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4eeb",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992592/hwpqkk1enfgbelv8i0d8.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:22.254Z",
+    "date": 1716633245448,
+    "description": "Women's palazzo pants with a wide-leg silhouette and waist belt. Pair them with a tucked-in top to bring attention to the waist and flowing shape.",
+    "name": "Women Palazzo Pants with Waist Belt",
+    "price": 30.8,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4eec",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992592/zs1uuexqsdepibhwqg6q.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:22.338Z",
+    "date": 1716634345448,
+    "description": "A women's relaxed-fit jacket with a zip-front closure for easy layering. Wear it open over a top or zipped up to change the look.",
+    "name": "Women Zip-Front Relaxed Fit Jacket",
+    "price": 28.4,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4eed",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992592/fer1ltzxy9pkjqxc9rqh.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:22.418Z",
+    "date": 1716635445448,
+    "description": "Create a balanced outfit with these women's wide-leg palazzo pants and matching waist-belt detail. A simple fitted or tucked-in top completes the styling.",
+    "name": "Women Palazzo Pants with Waist Belt",
+    "price": 32,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4eee",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992593/dt3irnyfsmjergkte7j7.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:22.498Z",
+    "date": 1716636545448,
+    "description": "A pure cotton T-shirt for boys, featuring a round neckline that works with everyday separates. Pair it with tapered trousers for a tidy casual outfit.",
+    "name": "Boy Round Neck Pure Cotton T-shirt",
+    "price": 29.6,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4eef",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992594/qoxnefplsbeblzx0ib7v.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:22.638Z",
+    "date": 1716637645448,
+    "description": "This boys' round-neck pure cotton T-shirt is an easy addition to casual combinations. Style it with shorts for a day out or jeans for a different look.",
+    "name": "Boy Round Neck Pure Cotton T-shirt",
+    "price": 33.2,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4ef0",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992593/pexg7ylwqqqdqf3fqsfg.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:22.723Z",
+    "date": 1716638745448,
+    "description": "A round-neck cotton top for girls that can be styled in several everyday ways. Try it with a skirt and cardigan or keep it simple with denim.",
+    "name": "Girls Round Neck Cotton Top",
+    "price": 30.8,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4ef1",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992594/m5euqgodtatlafn1du59.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:22.818Z",
+    "date": 1716639845448,
+    "description": "Layer your everyday outfits with this women's zip-front jacket. Its relaxed fit makes it a natural partner for a simple top and straight-leg trousers.",
+    "name": "Women Zip-Front Relaxed Fit Jacket",
+    "price": 34.4,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4ef2",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992594/y3opr54aop8vlken9jq9.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:22.898Z",
+    "date": 1716640945448,
+    "description": "A girls' cotton top with a classic round neckline, ready to mix with favourite wardrobe pieces for casual days and relaxed outings.",
+    "name": "Girls Round Neck Cotton Top",
+    "price": 32,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4ef3",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992595/yokuqbnpyo14ljtros8v.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:22.988Z",
+    "date": 1716642045448,
+    "description": "A men's denim jacket for adding a structured layer to casual outfits. Wear it over a round-neck T-shirt with chinos for a balanced denim look.",
+    "name": "Men Slim Fit Relaxed Denim Jacket",
+    "price": 35.6,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4ef4",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992595/pkl3mag47kozik1r3l8h.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:23.088Z",
+    "date": 1716643145448,
+    "description": "Bring a simple finishing touch to everyday outfits with this women's round-neck cotton top. Style it with tailored trousers or casual denim.",
+    "name": "Women Round Neck Cotton Top",
+    "price": 33.2,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4ef5",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992595/grx905i9pnjlzkmwepzb.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:23.168Z",
+    "date": 1716644245448,
+    "description": "This girls' round-neck cotton top keeps casual styling straightforward. Pair it with leggings for a simple combination or a skirt for a change of look.",
+    "name": "Girls Round Neck Cotton Top",
+    "price": 36.8,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4ef6",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992596/ei1pesckmowinxwfc6nk.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:23.248Z",
+    "date": 1716645345448,
+    "description": "A men's pure cotton T-shirt with a round neckline, ideal as the central piece of a simple outfit with trousers and trainers.",
+    "name": "Men Round Neck Pure Cotton T-shirt",
+    "price": 34.4,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4ef7",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992596/gpfx5ggjnytfjx9ikw4u.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:23.338Z",
+    "date": 1716646445448,
+    "description": "Refresh your casual combinations with this men's round-neck pure cotton T-shirt. Wear it with shorts or add a denim jacket for a layered finish.",
+    "name": "Men Round Neck Pure Cotton T-shirt",
+    "price": 38,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4ef8",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992600/c08ox1i7baveoxo9f4j0.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:23.428Z",
+    "date": 1716647545448,
+    "description": "A cotton round-neck top for girls that pairs with a variety of everyday bottoms. Add a cardigan to build a layered outfit when needed.",
+    "name": "Girls Round Neck Cotton Top",
+    "price": 35.6,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4ef9",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992600/nivxne2jabtvsk5y6uiq.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:23.527Z",
+    "date": 1716648645448,
+    "description": "A women's round-neck cotton top for versatile casual styling. Combine it with wide-leg trousers and understated accessories for a considered everyday look.",
+    "name": "Women Round Neck Cotton Top",
+    "price": 39.2,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4efa",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992600/jkokki6lmk0a5ycdksde.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:23.598Z",
+    "date": 1716649745448,
+    "description": "This women's relaxed-fit jacket features a zip front for flexible styling. Pair it with jeans and a basic top for an easy layered outfit.",
+    "name": "Women Zip-Front Relaxed Fit Jacket",
+    "price": 36.8,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4efb",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992601/pjaoqofiebjfli9xbqht.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:23.688Z",
+    "date": 1716650845448,
+    "description": "A relaxed women's jacket with a zip-front design, ready to complete casual combinations. Style it with tapered trousers to contrast its relaxed shape.",
+    "name": "Women Zip-Front Relaxed Fit Jacket",
+    "price": 40.4,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4efc",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992590/doupqkn83e3k8amw16d7.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:23.778Z",
+    "date": 1716651945448,
+    "description": "Keep your outfit easy to coordinate with this women's cotton round-neck top. Pair it with a skirt or wear it under a jacket as a simple base layer.",
+    "name": "Women Round Neck Cotton Top",
+    "price": 38,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4efd",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992590/u1dtvgpgqyp40f9d1ozi.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:23.858Z",
+    "date": 1716653045448,
+    "description": "A round-neck pure cotton T-shirt for men that fits naturally into everyday styling. Try it beneath an open casual shirt with your favourite jeans.",
+    "name": "Men Round Neck Pure Cotton T-shirt",
+    "price": 41.6,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4efe",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992603/mii4pjnln90ouezugcmg.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:23.938Z",
+    "date": 1716654145448,
+    "description": "A men's cotton shirt for adding variety to casual outfits. Pair it with plain trousers or denim to keep the overall look easy to coordinate.",
+    "name": "Men Printed Plain Cotton Shirt",
+    "price": 39.2,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4eff",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992602/ypniznso1ja8xypw9s8e.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:24.038Z",
+    "date": 1716655245448,
+    "description": "Introduce denim into your outerwear rotation with this men's jacket. Layer it over a simple top and pair it with contrasting trousers.",
+    "name": "Men Slim Fit Relaxed Denim Jacket",
+    "price": 42.8,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f00",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992603/icvd9sqtnhdvtfa2foqx.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:24.108Z",
+    "date": 1716656345448,
+    "description": "This men's pure cotton round-neck T-shirt keeps the focus on simple styling. Wear it with tapered trousers for a clean casual combination.",
+    "name": "Men Round Neck Pure Cotton T-shirt",
+    "price": 40.4,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f01",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992591/vr2jv4nvybwq5txvzx9t.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:24.199Z",
+    "date": 1716657445448,
+    "description": "A boys' T-shirt made from pure cotton with a round neckline. Pair it with casual trousers or use it as a base beneath a favourite overshirt.",
+    "name": "Boy Round Neck Pure Cotton T-shirt",
+    "price": 44,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f02",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992603/hmddra2qmpi8tilupgsl.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:24.278Z",
+    "date": 1716658545448,
+    "description": "Kids' trousers with a slim, tapered shape that narrows towards the ankle. Pair them with a round-neck top for a neat everyday outfit.",
+    "name": "Kid Tapered Slim Fit Trouser",
+    "price": 41.6,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f03",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992604/maodidvrswz4dukqnuz2.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:24.354Z",
+    "date": 1716659645448,
+    "description": "Complete a layered look with this women's relaxed-fit zip-front jacket. Wear it over a cotton top and choose slim or straight-leg bottoms to suit your style.",
+    "name": "Women Zip-Front Relaxed Fit Jacket",
+    "price": 45.2,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f04",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992607/y7zxnwhnktboovn0bcnc.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:24.432Z",
+    "date": 1716660745448,
+    "description": "A men's denim jacket that adds definition to casual layers. Combine it with a plain T-shirt and non-denim trousers for a contrasting outfit.",
+    "name": "Men Slim Fit Relaxed Denim Jacket",
+    "price": 42.8,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f05",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992608/xsr0h0ewi8duzopkmjqk.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:24.498Z",
+    "date": 1716661845448,
+    "description": "Build a casual layered outfit around this men's denim jacket. Wear it over a shirt or T-shirt and finish the look with chinos or jeans.",
+    "name": "Men Slim Fit Relaxed Denim Jacket",
+    "price": 46.4,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f06",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992608/qr0nbdrxkdzriz8xho9t.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:24.578Z",
+    "date": 1716662945448,
+    "description": "These kids' slim-fit trousers feature a tapered leg for a tidy silhouette. Style them with a cotton T-shirt or a casual shirt for different occasions.",
+    "name": "Kid Tapered Slim Fit Trouser",
+    "price": 44,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f07",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992609/lfqb4wfa9llp1brmhljp.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:24.658Z",
+    "date": 1716664045448,
+    "description": "A men's denim jacket for bringing a classic outer layer to everyday looks. Pair it with a round-neck top and tapered trousers for simple styling.",
+    "name": "Men Slim Fit Relaxed Denim Jacket",
+    "price": 47.6,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f08",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992609/eeyke7nug14swu8xqe1y.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:24.748Z",
+    "date": 1716665145448,
+    "description": "A pair of kids' tapered slim-fit trousers that works with everyday tops. Add trainers and a favourite T-shirt to put together a casual outfit.",
+    "name": "Kid Tapered Slim Fit Trouser",
+    "price": 45.2,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f09",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992610/mtml11v1gguke8gk4xqf.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:24.848Z",
+    "date": 1716666245448,
+    "description": "Kids' slim trousers with a tapered shape, ready to pair with a polo, cotton top, or casual shirt for a coordinated everyday look.",
+    "name": "Kid Tapered Slim Fit Trouser",
+    "price": 48.8,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f0a",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992610/d79duhew118kb7lexvuk.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:24.953Z",
+    "date": 1716667345448,
+    "description": "A women's zip-front jacket with a relaxed fit for casual layering. Leave it open to show the outfit beneath or close the zip for a different silhouette.",
+    "name": "Women Zip-Front Relaxed Fit Jacket",
+    "price": 46.4,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f0b",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992611/nbjv5c6ksf2ktji4ep6p.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:25.038Z",
+    "date": 1716668445448,
+    "description": "Finish a casual outfit with this men's denim jacket. Layer it over a cotton T-shirt and experiment with contrasting denim or tailored casual bottoms.",
+    "name": "Men Slim Fit Relaxed Denim Jacket",
+    "price": 50,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T15:00:27.374Z"
+  }
+]

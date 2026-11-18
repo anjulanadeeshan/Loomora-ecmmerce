@@ -39,6 +39,7 @@ const AdminProducts = () => {
     } else {
       const query = searchQuery.toLowerCase();
       const filtered = products.filter(product =>
+        String(product._id).toLowerCase().includes(query) ||
         product.name.toLowerCase().includes(query) ||
         product.description.toLowerCase().includes(query) ||
         product.category.toLowerCase().includes(query) ||
@@ -245,7 +246,7 @@ const AdminProducts = () => {
     <>
       <div className="min-h-screen bg-gray-50">
         <AdminNavbar />
-        <div className="py-8">
+        <div className="pb-8 pt-[108px]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
@@ -269,7 +270,7 @@ const AdminProducts = () => {
           <div className="relative">
             <input
               type="text"
-              placeholder="Search products by name, description, category..."
+              placeholder="Search products by name, description, category, or ID..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
@@ -327,11 +328,12 @@ const AdminProducts = () => {
               )}
             </div>
           ) : (
-            <div className="overflow-x-auto max-h-[calc(100vh-400px)] overflow-y-auto">
+            <div className="overflow-x-auto max-h-[calc(100vh-250px)] min-h-[500px] overflow-y-auto">
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50 sticky top-0 z-10">
                   <tr>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">Product</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">Product ID</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">Category</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">Price</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">Sizes</th>
@@ -354,6 +356,17 @@ const AdminProducts = () => {
                             <div className="text-sm text-gray-500 truncate max-w-xs">{product.description}</div>
                           </div>
                         </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <button
+                          type="button"
+                          onClick={() => navigator.clipboard?.writeText(product._id)}
+                          className="max-w-[120px] truncate font-mono text-xs text-[#746d65] transition hover:text-[#7d263d]"
+                          title={`Copy product ID: ${product._id}`}
+                          aria-label={`Copy product ID ${product._id}`}
+                        >
+                          {product._id}
+                        </button>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900">{product.category}</div>

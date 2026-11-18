@@ -1,4 +1,43 @@
 const Product = require('../models/productModel');
+const { v2: cloudinary } = require('cloudinary');
+
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+// Upload Product Images
+const uploadProductImages = async (req, res) => {
+    try {
+        if (!req.files || req.files.length === 0) {
+            return res.json({ success: false, message: 'At least one product image is required' });
+        }
+
+        const uploads = req.files.map((file) => new Promise((resolve, reject) => {
+            const stream = cloudinary.uploader.upload_stream(
+                {
+                    folder: 'loomora/products',
+                    resource_type: 'image'
+                },
+                (error, result) => {
+                    if (error) {
+                        reject(error);
+                        return;
+                    }
+                    resolve(result.secure_url);
+                }
+            );
+            stream.end(file.buffer);
+        }));
+
+        const urls = await Promise.all(uploads);
+        res.json({ success: true, urls });
+    } catch (error) {
+        console.error('Upload Product Images Error:', error);
+        res.json({ success: false, message: error.message || 'Cloudinary upload failed' });
+    }
+};
 
 // Add Product
 const addProduct = async (req, res) => {
@@ -55,6 +94,17 @@ const listProducts = async (req, res) => {
 
     } catch (error) {
         console.error('List Products Error:', error);
+        res.json({ success: false, message: error.message });
+    }
+};
+
+// Count all Products
+const countProducts = async (req, res) => {
+    try {
+        const count = await Product.countDocuments();
+        res.json({ success: true, count });
+    } catch (error) {
+        console.error('Count Products Error:', error);
         res.json({ success: false, message: error.message });
     }
 };
@@ -134,7 +184,9 @@ const updateProduct = async (req, res) => {
 module.exports = { 
     addProduct, 
     listProducts, 
+    countProducts,
     removeProduct, 
     singleProduct,
-    updateProduct 
+    updateProduct,
+    uploadProductImages
 };

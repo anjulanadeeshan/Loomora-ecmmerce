@@ -66,18 +66,24 @@ const Collection = () => {
 
   return (
       <main className="page-shell page-enter page-pad">
-      <div className={`relative mb-12 overflow-hidden rounded-[2rem] transition-[min-height] duration-300 ${showSearch ? 'min-h-[470px] sm:min-h-[430px]' : 'min-h-[280px]'}`}>
+      <div className={`relative mb-8 overflow-hidden rounded-[1.75rem] border border-[#ded7cc]/60 transition-all duration-300 ${showSearch ? 'min-h-[190px]' : 'min-h-[140px]'}`}>
         <img
           src={assets.collection_banner}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-center opacity-50"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#fffdf9] via-[#fffdf9]/85 to-[#fffdf9]/20"></div>
-        <div className="relative z-10 max-w-2xl px-7 py-12 sm:px-10 sm:py-14">
-          <p className="eyebrow mb-4">The complete edit</p>
-          <h1 className="editorial-title">Find your next signature piece.</h1>
-          <p className="mt-5 max-w-xl text-base leading-[1.6] text-[#5f5851]">Explore elevated essentials, statement layers and modern silhouettes curated for every version of you.</p>
-          <SearchBar />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#fffdf9] via-[#fffdf9]/90 to-[#fffdf9]/50"></div>
+        <div className="relative z-10 flex flex-col justify-between gap-6 px-6 py-6 sm:px-9 sm:py-7 lg:flex-row lg:items-center">
+          <div className="max-w-xl">
+            <p className="eyebrow mb-1.5">The complete edit</p>
+            <h1 className="editorial-title !text-3xl sm:!text-4xl lg:!text-[2.6rem]">Find your next signature piece.</h1>
+            <p className="mt-2 text-xs leading-relaxed text-[#5f5851] sm:text-sm">Explore elevated essentials, statement layers and modern silhouettes curated for every version of you.</p>
+          </div>
+          {showSearch && (
+            <div className="w-full lg:max-w-md lg:shrink-0">
+              <SearchBar />
+            </div>
+          )}
         </div>
       </div>
       <div className="flex flex-col gap-8 sm:flex-row sm:gap-10">

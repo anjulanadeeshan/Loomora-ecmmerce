@@ -1,0 +1,1141 @@
+[
+  {
+    "_id": "6afd8b9860499bcfba7e4ed8",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992613/we0zh6nr1ucdbztasgzg.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:19.972Z",
+    "date": 1795001239141,
+    "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    "name": "Women Round Neck Cotton Top",
+    "price": 100,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:19.972Z"
+  },
+  {
+    "_id": "6afd8b9860499bcfba7e4ed9",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992586/ffr3y7qwybuv5xwhmsq5.png",
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992586/gqyeq4yok4tht7lvijsr.png",
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992586/cayxttcxhh7g0tkmohz4.png",
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992586/k2nkzh6pk6o1vapmbhqx.png",
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992586/oteb0sckctbzmjry3ljd.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:20.548Z",
+    "date": 1795001239141,
+    "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    "name": "Men Round Neck Pure Cotton T-shirt",
+    "price": 200,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:20.548Z"
+  },
+  {
+    "_id": "6afd8b9860499bcfba7e4eda",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992586/v0k8uoturtvwyrdcfhy4.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:20.628Z",
+    "date": 1795001239141,
+    "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    "name": "Girls Round Neck Cotton Top",
+    "price": 220,
+    "sizes": [
+      "S",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:20.628Z"
+  },
+  {
+    "_id": "6afd8b9860499bcfba7e4edb",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992587/z4xyhwjt1o29af3opti3.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:20.718Z",
+    "date": 1795001239141,
+    "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    "name": "Men Round Neck Pure Cotton T-shirt",
+    "price": 110,
+    "sizes": [
+      "S",
+      "M",
+      "XXL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:20.718Z"
+  },
+  {
+    "_id": "6afd8b9860499bcfba7e4edc",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992587/islny2ttx7eptzwsay2f.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:20.798Z",
+    "date": 1795001239141,
+    "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    "name": "Women Round Neck Cotton Top",
+    "price": 130,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:20.798Z"
+  },
+  {
+    "_id": "6afd8b9860499bcfba7e4edd",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992588/tbzcjnt0mgzritw7sa0j.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:20.888Z",
+    "date": 1795001239141,
+    "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    "name": "Girls Round Neck Cotton Top",
+    "price": 140,
+    "sizes": [
+      "S",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:20.888Z"
+  },
+  {
+    "_id": "6afd8b9860499bcfba7e4ede",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992588/vsfkl8rvzcyotmmnsgjj.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:20.989Z",
+    "date": 1795001239141,
+    "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    "name": "Men Tapered Fit Flat-Front Trousers",
+    "price": 190,
+    "sizes": [
+      "S",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:20.989Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4edf",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992588/ltzjgl9usd9tbvmrluav.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:21.068Z",
+    "date": 1795001239141,
+    "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    "name": "Men Round Neck Pure Cotton T-shirt",
+    "price": 140,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:21.068Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee0",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992588/qyynau8vyj1bpkgox31d.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:21.158Z",
+    "date": 1795001239141,
+    "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    "name": "Girls Round Neck Cotton Top",
+    "price": 100,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:21.158Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee1",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992590/rqvyrbkup6apvg5lll0a.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:21.238Z",
+    "date": 1795001239141,
+    "description": "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
+    "name": "Men Tapered Fit Flat-Front Trousers",
+    "price": 110,
+    "sizes": [
+      "S",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:21.238Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee2",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992589/umkv4om1ca1fy4qg0j8k.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:21.318Z",
+    "date": 1795001241329,
+    "description": "A curated Loomora winterwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 11",
+    "price": 155,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T11:27:21.318Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee3",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992589/iswojaecu1qf5koscswn.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:21.408Z",
+    "date": 1795001241420,
+    "description": "A curated Loomora topwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 12",
+    "price": 160,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:21.408Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee4",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992602/es9wsso9xjqy2kxlwjkn.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:21.505Z",
+    "date": 1795001241518,
+    "description": "A curated Loomora bottomwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 13",
+    "price": 165,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:21.505Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee5",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992601/g8l2vmdn7qowmoacp3qs.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:21.628Z",
+    "date": 1795001241642,
+    "description": "A curated Loomora winterwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 14",
+    "price": 170,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T11:27:21.628Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee6",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992590/vmt8wtrbf0dnlhihbyfh.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:21.709Z",
+    "date": 1795001241724,
+    "description": "A curated Loomora topwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 15",
+    "price": 175,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:21.709Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee7",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992591/zm0usqn3gyz4ulowgu76.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:21.838Z",
+    "date": 1795001241854,
+    "description": "A curated Loomora bottomwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 16",
+    "price": 180,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:21.838Z"
+  },
+  {
+    "_id": "6afd8b9960499bcfba7e4ee8",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992591/qkbd6kdhee5e7vcxofkd.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:22.038Z",
+    "date": 1795001242055,
+    "description": "A curated Loomora winterwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 17",
+    "price": 185,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T11:27:22.038Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4ee9",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992603/fe4gcxosu43kpnc0jn1q.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:22.108Z",
+    "date": 1795001242126,
+    "description": "A curated Loomora topwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 18",
+    "price": 190,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:22.108Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4eea",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992591/rafmtsqrexztqro94ugg.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:22.178Z",
+    "date": 1795001242197,
+    "description": "A curated Loomora bottomwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 19",
+    "price": 195,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:22.178Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4eeb",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992592/hwpqkk1enfgbelv8i0d8.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:22.254Z",
+    "date": 1795001242274,
+    "description": "A curated Loomora winterwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 20",
+    "price": 200,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T11:27:22.254Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4eec",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992592/zs1uuexqsdepibhwqg6q.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:22.338Z",
+    "date": 1795001242359,
+    "description": "A curated Loomora topwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 21",
+    "price": 205,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:22.338Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4eed",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992592/fer1ltzxy9pkjqxc9rqh.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:22.418Z",
+    "date": 1795001242440,
+    "description": "A curated Loomora bottomwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 22",
+    "price": 210,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:22.418Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4eee",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992593/dt3irnyfsmjergkte7j7.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:22.498Z",
+    "date": 1795001242521,
+    "description": "A curated Loomora winterwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 23",
+    "price": 215,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T11:27:22.498Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4eef",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992594/qoxnefplsbeblzx0ib7v.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:22.638Z",
+    "date": 1795001242662,
+    "description": "A curated Loomora topwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 24",
+    "price": 220,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:22.638Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4ef0",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992593/pexg7ylwqqqdqf3fqsfg.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:22.723Z",
+    "date": 1795001242748,
+    "description": "A curated Loomora bottomwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 25",
+    "price": 225,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:22.723Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4ef1",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992594/m5euqgodtatlafn1du59.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:22.818Z",
+    "date": 1795001242844,
+    "description": "A curated Loomora winterwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 26",
+    "price": 230,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T11:27:22.818Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4ef2",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992594/y3opr54aop8vlken9jq9.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:22.898Z",
+    "date": 1795001242925,
+    "description": "A curated Loomora topwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 27",
+    "price": 235,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:22.898Z"
+  },
+  {
+    "_id": "6afd8b9a60499bcfba7e4ef3",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992595/yokuqbnpyo14ljtros8v.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:22.988Z",
+    "date": 1795001243016,
+    "description": "A curated Loomora bottomwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 28",
+    "price": 240,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:22.988Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4ef4",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992595/pkl3mag47kozik1r3l8h.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:23.088Z",
+    "date": 1795001243117,
+    "description": "A curated Loomora winterwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 29",
+    "price": 245,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T11:27:23.088Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4ef5",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992595/grx905i9pnjlzkmwepzb.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:23.168Z",
+    "date": 1795001243198,
+    "description": "A curated Loomora topwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 30",
+    "price": 250,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:23.168Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4ef6",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992596/ei1pesckmowinxwfc6nk.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:23.248Z",
+    "date": 1795001243279,
+    "description": "A curated Loomora bottomwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 31",
+    "price": 255,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:23.248Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4ef7",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992596/gpfx5ggjnytfjx9ikw4u.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:23.338Z",
+    "date": 1795001243370,
+    "description": "A curated Loomora winterwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 32",
+    "price": 260,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T11:27:23.338Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4ef8",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992600/c08ox1i7baveoxo9f4j0.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:23.428Z",
+    "date": 1795001243461,
+    "description": "A curated Loomora topwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 33",
+    "price": 265,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:23.428Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4ef9",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992600/nivxne2jabtvsk5y6uiq.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:23.527Z",
+    "date": 1795001243561,
+    "description": "A curated Loomora bottomwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 34",
+    "price": 270,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:23.527Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4efa",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992600/jkokki6lmk0a5ycdksde.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:23.598Z",
+    "date": 1795001243633,
+    "description": "A curated Loomora winterwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 35",
+    "price": 275,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T11:27:23.598Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4efb",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992601/pjaoqofiebjfli9xbqht.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:23.688Z",
+    "date": 1795001243724,
+    "description": "A curated Loomora topwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 36",
+    "price": 280,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:23.688Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4efc",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992590/doupqkn83e3k8amw16d7.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:23.778Z",
+    "date": 1795001243815,
+    "description": "A curated Loomora bottomwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 37",
+    "price": 285,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:23.778Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4efd",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992590/u1dtvgpgqyp40f9d1ozi.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:23.858Z",
+    "date": 1795001243896,
+    "description": "A curated Loomora winterwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 38",
+    "price": 290,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T11:27:23.858Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4efe",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992603/mii4pjnln90ouezugcmg.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:23.938Z",
+    "date": 1795001243977,
+    "description": "A curated Loomora topwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 39",
+    "price": 295,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:23.938Z"
+  },
+  {
+    "_id": "6afd8b9b60499bcfba7e4eff",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992602/ypniznso1ja8xypw9s8e.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:24.038Z",
+    "date": 1795001244078,
+    "description": "A curated Loomora bottomwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 40",
+    "price": 300,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:24.038Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f00",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992603/icvd9sqtnhdvtfa2foqx.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:24.108Z",
+    "date": 1795001244149,
+    "description": "A curated Loomora winterwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 41",
+    "price": 305,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T11:27:24.108Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f01",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992591/vr2jv4nvybwq5txvzx9t.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:24.199Z",
+    "date": 1795001244241,
+    "description": "A curated Loomora topwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 42",
+    "price": 310,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:24.199Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f02",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992603/hmddra2qmpi8tilupgsl.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:24.278Z",
+    "date": 1795001244321,
+    "description": "A curated Loomora bottomwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 43",
+    "price": 315,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:24.278Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f03",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992604/maodidvrswz4dukqnuz2.png"
+    ],
+    "__v": 0,
+    "bestseller": true,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:24.354Z",
+    "date": 1795001244398,
+    "description": "A curated Loomora winterwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 44",
+    "price": 320,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T11:27:24.354Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f04",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992607/y7zxnwhnktboovn0bcnc.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:24.432Z",
+    "date": 1795001244477,
+    "description": "A curated Loomora topwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 45",
+    "price": 325,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:24.432Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f05",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992608/xsr0h0ewi8duzopkmjqk.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:24.498Z",
+    "date": 1795001244544,
+    "description": "A curated Loomora bottomwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 46",
+    "price": 330,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:24.498Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f06",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992608/qr0nbdrxkdzriz8xho9t.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:24.578Z",
+    "date": 1795001244625,
+    "description": "A curated Loomora winterwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 47",
+    "price": 335,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T11:27:24.578Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f07",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992609/lfqb4wfa9llp1brmhljp.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:24.658Z",
+    "date": 1795001244706,
+    "description": "A curated Loomora topwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 48",
+    "price": 340,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:24.658Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f08",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992609/eeyke7nug14swu8xqe1y.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:24.748Z",
+    "date": 1795001244797,
+    "description": "A curated Loomora bottomwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 49",
+    "price": 345,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:24.748Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f09",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992610/mtml11v1gguke8gk4xqf.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Kids",
+    "createdAt": "2026-11-18T11:27:24.848Z",
+    "date": 1795001244898,
+    "description": "A curated Loomora winterwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 50",
+    "price": 350,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Winterwear",
+    "updatedAt": "2026-11-18T11:27:24.848Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f0a",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992610/d79duhew118kb7lexvuk.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Women",
+    "createdAt": "2026-11-18T11:27:24.953Z",
+    "date": 1795001245004,
+    "description": "A curated Loomora topwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 51",
+    "price": 355,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Topwear",
+    "updatedAt": "2026-11-18T11:27:24.953Z"
+  },
+  {
+    "_id": "6afd8b9c60499bcfba7e4f0b",
+    "image": [
+      "https://res.cloudinary.com/diujju82k/image/upload/f_auto,q_auto/v1794992611/nbjv5c6ksf2ktji4ep6p.png"
+    ],
+    "__v": 0,
+    "bestseller": false,
+    "category": "Men",
+    "createdAt": "2026-11-18T11:27:25.038Z",
+    "date": 1795001245090,
+    "description": "A curated Loomora bottomwear piece selected for everyday style and comfortable wear.",
+    "name": "Loomora Collection Piece 52",
+    "price": 360,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "subCategory": "Bottomwear",
+    "updatedAt": "2026-11-18T11:27:25.038Z"
+  }
+]

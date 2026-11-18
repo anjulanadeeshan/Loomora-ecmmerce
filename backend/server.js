@@ -1,13 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+
+// Load environment variables before importing routes and controllers.
+dotenv.config();
+
 const connectDB = require('./config/mongodb');
 const userRouter = require('./routes/userRoute');
 const productRouter = require('./routes/productRoute');
 const orderRouter = require('./routes/orderRoute');
-
-// Load environment variables
-dotenv.config();
 
 // Initialize Express app
 const app = express();

@@ -188,6 +188,27 @@ input[type="checkbox"] {
   background: white;
 }
 
+.fashion-button-light:hover {
+  color: white;
+  border-color: var(--loomora-wine);
+  background: var(--loomora-wine);
+  box-shadow: 0 12px 30px rgba(125, 38, 61, 0.22);
+}
+
+.fashion-button-outline {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+}
+
+.fashion-button-outline:hover {
+  color: #211d1a;
+  border-color: white;
+  background: white;
+  box-shadow: none;
+}
+
 a.active .nav-indicator {
   width: 100%;
   opacity: 1;

@@ -11,6 +11,8 @@ const AdminNavbar = () => {
     if (window.confirm('Are you sure you want to logout?')) {
       localStorage.removeItem('adminToken');
       localStorage.removeItem('adminUser');
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
       navigate('/');
     }
   };
@@ -25,7 +27,7 @@ const AdminNavbar = () => {
   return (
     <div className="fixed inset-x-0 top-0 z-50 flex h-[76px] items-center justify-between border-b border-[#ded7cc] bg-[#fffdf9]/90 px-4 font-medium backdrop-blur-xl sm:px-[5vw] md:px-[7vh] lg:px-[9vh]">
       <Link to='/admin/dashboard'>
-        <img src={assets.loomora_logo} className="h-14 w-32 object-contain" alt="Loomora" />
+        <img src={assets.loomora_logo} className="h-10 w-auto object-contain" alt="Loomora" />
       </Link>
       
       <ul className="hidden items-center gap-2 rounded-full border border-[#ded7cc] bg-white/70 p-1 text-xs text-[#4f4943] sm:flex">

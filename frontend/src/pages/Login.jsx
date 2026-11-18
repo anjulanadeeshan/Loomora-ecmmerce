@@ -56,6 +56,10 @@ const Login = () => {
           }
         } else {
           response = await loginUser(formData.email, formData.password);
+          if (response.success) {
+            localStorage.removeItem('adminToken');
+            localStorage.removeItem('adminUser');
+          }
         }
       }
 

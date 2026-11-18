@@ -50,6 +50,8 @@ const ShopContextProvider = (props) => {
 
   // Login function
   const login = (token, userData) => {
+    localStorage.removeItem('adminToken');
+    localStorage.removeItem('adminUser');
     saveAuthData(token, userData);
     setToken(token);
     setUser(userData);

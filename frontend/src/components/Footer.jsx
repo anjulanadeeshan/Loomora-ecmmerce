@@ -9,7 +9,7 @@ const Footer = () => {
           
           {/* Logo and description */}
           <div className="lg:col-span-2">
-            <img src={assets.loomora_logo} className="mb-7 h-16 w-40 rounded-xl bg-white object-contain" alt="Loomora logo" />
+            <img src={assets.loomora_white} className="mb-7 h-14 w-auto object-contain" alt="Loomora logo" />
             <p className="mb-8 max-w-md text-sm leading-7 text-[#a9a198]">
               Loomora is your ultimate destination for trendy and sophisticated fashion. We curate exceptional collections that blend contemporary style with timeless elegance, elevating your wardrobe effortlessly.
             </p>

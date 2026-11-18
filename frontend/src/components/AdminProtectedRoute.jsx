@@ -8,7 +8,7 @@ const AdminProtectedRoute = ({ children }) => {
   // Check if admin is authenticated
   if (!adminToken || !adminUser) {
     // Redirect to login page if not authenticated
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/admin/login" replace />;
   }
 
   // Render the protected component if authenticated
