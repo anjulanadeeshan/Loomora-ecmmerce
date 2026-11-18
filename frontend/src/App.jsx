@@ -19,7 +19,6 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import AdminProtectedRoute from "./components/AdminProtectedRoute";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import SearchBar from "./components/SearchBar";
 import { ToastContainer } from 'react-toastify';
 
 
@@ -31,7 +30,6 @@ const App = () => {
     <div className={isAdminRoute ? 'admin-app' : 'storefront-app'}>
       <ToastContainer />
       {!isAdminRoute && <NavBar />}
-      {!isAdminRoute && <SearchBar />}
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/collection" element={<Collection />} />

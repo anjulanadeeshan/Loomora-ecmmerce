@@ -14,14 +14,24 @@ const addProduct = async (req, res) => {
             return res.json({ success: false, message: 'At least one product image is required' });
         }
 
+        let parsedSizes = sizes;
+        if (!Array.isArray(parsedSizes)) {
+            parsedSizes = JSON.parse(parsedSizes);
+        }
+
+        const parsedPrice = Number(price);
+        if (!Number.isFinite(parsedPrice) || parsedPrice <= 0) {
+            return res.json({ success: false, message: 'Price must be a valid positive number' });
+        }
+
         const productData = {
             name,
             description,
-            price: Number(price),
+            price: parsedPrice,
             category,
             subCategory,
-            sizes: Array.isArray(sizes) ? sizes : JSON.parse(sizes),
-            bestseller: Boolean(bestseller),
+            sizes: parsedSizes,
+            bestseller: bestseller === true || bestseller === 'true',
             image: Array.isArray(image) ? image : [image], // Cloudinary URLs
             date: date || Date.now()
         };
@@ -82,14 +92,24 @@ const updateProduct = async (req, res) => {
     try {
         const { id, name, description, price, category, subCategory, sizes, bestseller, image } = req.body;
 
+        let parsedSizes = sizes;
+        if (!Array.isArray(parsedSizes)) {
+            parsedSizes = JSON.parse(parsedSizes);
+        }
+
+        const parsedPrice = Number(price);
+        if (!Number.isFinite(parsedPrice) || parsedPrice <= 0) {
+            return res.json({ success: false, message: 'Price must be a valid positive number' });
+        }
+
         const updateData = {
             name,
             description,
-            price: Number(price),
+            price: parsedPrice,
             category,
             subCategory,
-            sizes: Array.isArray(sizes) ? sizes : JSON.parse(sizes),
-            bestseller: Boolean(bestseller)
+            sizes: parsedSizes,
+            bestseller: bestseller === true || bestseller === 'true'
         };
 
         // Handle new images if provided (Cloudinary URLs)

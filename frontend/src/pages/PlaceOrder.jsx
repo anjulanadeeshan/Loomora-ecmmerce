@@ -219,24 +219,24 @@ const PlaceOrder = () => {
             </div>
 
             {/* Payment Method Selection */}
-            <div className='flex gap-3 flex-col lg:flex-row'>
+            <div className='grid grid-cols-1 gap-3 sm:grid-cols-3'>
                 
                 {/* Stripe */}
-                <div onClick={()=>setMethod('stripe')} className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition ${method === 'stripe' ? 'border-[#7d263d] bg-[#f7edf0]' : 'border-[#ded7cc]'}`}>
-                    <p className={`h-3.5 min-w-3.5 rounded-full border ${method === 'stripe' ? 'border-[#7d263d] bg-[#7d263d]' : ''}`}></p>
-                    <img className='h-5 mx-4' src={assets.stripe_logo} alt="Stripe" />
+                <div onClick={()=>setMethod('stripe')} className={`flex h-16 cursor-pointer items-center justify-center gap-2.5 rounded-xl border px-3 transition sm:h-20 ${method === 'stripe' ? 'border-[#7d263d] bg-[#f7edf0]' : 'border-[#ded7cc]'}`}>
+                    <span className={`h-3.5 min-w-3.5 rounded-full border ${method === 'stripe' ? 'border-[#7d263d] bg-[#7d263d]' : ''}`}></span>
+                    <img className='h-5 max-w-[72px] object-contain' src={assets.stripe_logo} alt="Stripe" />
                 </div>
 
                 {/* Razorpay */}
-                <div onClick={()=>setMethod('razorpay')} className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition ${method === 'razorpay' ? 'border-[#7d263d] bg-[#f7edf0]' : 'border-[#ded7cc]'}`}>
-                    <p className={`h-3.5 min-w-3.5 rounded-full border ${method === 'razorpay' ? 'border-[#7d263d] bg-[#7d263d]' : ''}`}></p>
-                    <img className='h-5 mx-4' src={assets.razorpay_logo} alt="Razorpay" />
+                <div onClick={()=>setMethod('razorpay')} className={`flex h-16 cursor-pointer items-center justify-center gap-2.5 rounded-xl border px-3 transition sm:h-20 ${method === 'razorpay' ? 'border-[#7d263d] bg-[#f7edf0]' : 'border-[#ded7cc]'}`}>
+                    <span className={`h-3.5 min-w-3.5 rounded-full border ${method === 'razorpay' ? 'border-[#7d263d] bg-[#7d263d]' : ''}`}></span>
+                    <img className='h-5 max-w-[72px] object-contain' src={assets.razorpay_logo} alt="Razorpay" />
                 </div>
 
                 {/* Cash on Delivery */}
-                <div onClick={()=>setMethod('cod')} className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition ${method === 'cod' ? 'border-[#7d263d] bg-[#f7edf0]' : 'border-[#ded7cc]'}`}>
-                    <p className={`h-3.5 min-w-3.5 rounded-full border ${method === 'cod' ? 'border-[#7d263d] bg-[#7d263d]' : ''}`}></p>
-                    <p className='text-gray-500 text-sm font-medium mx-4'>CASH ON DELIVERY</p>
+                <div onClick={()=>setMethod('cod')} className={`flex h-16 cursor-pointer items-center justify-center gap-2.5 rounded-xl border px-3 text-center transition sm:h-20 ${method === 'cod' ? 'border-[#7d263d] bg-[#f7edf0]' : 'border-[#ded7cc]'}`}>
+                    <span className={`h-3.5 min-w-3.5 rounded-full border ${method === 'cod' ? 'border-[#7d263d] bg-[#7d263d]' : ''}`}></span>
+                    <span className='text-xs font-semibold text-gray-500 sm:leading-5'>CASH ON<br className='hidden sm:block' /> DELIVERY</span>
                 </div>
 
             </div>

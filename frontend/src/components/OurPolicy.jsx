@@ -22,8 +22,8 @@ const OurPolicy = () => {
               </span>
               <span className='display-font text-2xl text-[#b4935f]'>{item.number}</span>
             </div>
-            <h3 className='display-font mt-10 text-3xl'>{item.title}</h3>
-            <p className='mt-4 text-sm leading-7 text-[#746d65]'>{item.copy}</p>
+            <h3 className='display-font mt-10 text-3xl font-medium text-[#1d1a17]'>{item.title}</h3>
+            <p className='mt-4 text-sm leading-7 text-[#5f5851]'>{item.copy}</p>
           </article>
         ))}
       </div>

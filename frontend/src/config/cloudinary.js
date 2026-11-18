@@ -3,7 +3,8 @@
 
 export const CLOUDINARY_CONFIG = {
   cloudName: 'diujju82k', // Replace with your Cloudinary cloud name
-  uploadPreset: 'ecommerce_preset' // Replace with your unsigned upload preset name
+  uploadPreset: 'ecommerce_preset',
+  folder: 'loomora/products'
 };
 
 // Upload image to Cloudinary
@@ -11,7 +12,7 @@ export const uploadToCloudinary = async (file) => {
   const formData = new FormData();
   formData.append('file', file);
   formData.append('upload_preset', CLOUDINARY_CONFIG.uploadPreset);
-  formData.append('folder', 'e-commerce'); // Upload to e-commerce folder
+  formData.append('folder', CLOUDINARY_CONFIG.folder);
 
   try {
     const response = await fetch(
@@ -49,9 +50,17 @@ export const uploadMultipleToCloudinary = async (files) => {
 
   try {
     const results = await Promise.all(uploadPromises);
-    const successfulUploads = results.filter(result => result.success);
-    const urls = successfulUploads.map(result => result.url);
-    
+    const failedUpload = results.find(result => !result.success);
+    if (failedUpload) {
+      return {
+        success: false,
+        urls: [],
+        error: failedUpload.error || 'One or more image uploads failed'
+      };
+    }
+
+    const urls = results.map(result => result.url);
+
     return {
       success: true,
       urls

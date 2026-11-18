@@ -26,7 +26,13 @@ const products = [
         name: "Men Round Neck Pure Cotton T-shirt",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 200,
-        image: [productImages.p_img2_1],
+        image: [
+            productImages.p_img2,
+            productImages.p_img2_1,
+            productImages.p_img2_2,
+            productImages.p_img2_3,
+            productImages.p_img2_4
+        ],
         category: "Men",
         subCategory: "Topwear",
         sizes: ["M", "L", "XL"],
@@ -129,16 +135,54 @@ const seedProducts = async () => {
         await mongoose.connect(process.env.MONGODB_URI);
         console.log('✅ Connected to MongoDB');
 
-        // Clear existing products
-        await Product.deleteMany({});
-        console.log('🗑️  Cleared existing products');
+        // Preserve any products already managed in MongoDB and add missing catalogue products.
+        for (const product of products) {
+            await Product.updateOne(
+                { image: product.image[0] },
+                { $setOnInsert: product },
+                { upsert: true }
+            );
+        }
 
-        // Insert new products
-        const createdProducts = await Product.insertMany(products);
-        console.log(`✅ Seeded ${createdProducts.length} products successfully`);
+        let addedCount = 0;
+        for (let index = 11; index <= 52; index += 1) {
+            const imageKey = `p_img${index}`;
+            const imageUrl = productImages[imageKey];
+            if (!imageUrl) {
+                continue;
+            }
+
+            const category = ['Women', 'Men', 'Kids'][index % 3];
+            const subCategory = ['Topwear', 'Bottomwear', 'Winterwear'][index % 3];
+            const product = {
+                name: `Loomora Collection Piece ${index}`,
+                description: `A curated Loomora ${subCategory.toLowerCase()} piece selected for everyday style and comfortable wear.`,
+                price: 100 + (index * 5),
+                image: [imageUrl],
+                category,
+                subCategory,
+                sizes: ['S', 'M', 'L', 'XL'],
+                date: Date.now() + index,
+                bestseller: index % 11 === 0
+            };
+
+            const result = await Product.updateOne(
+                { image: imageUrl },
+                { $setOnInsert: product },
+                { upsert: true }
+            );
+            if (result.upsertedCount === 1) {
+                addedCount += 1;
+            }
+        }
+
+        const totalProducts = await Product.countDocuments();
+        console.log(`✅ Catalogue sync complete: ${totalProducts} MongoDB products available`);
+        console.log(`✅ Added ${addedCount} Cloudinary catalogue products`);
         
         console.log('\nSample Product IDs:');
-        createdProducts.slice(0, 3).forEach(product => {
+        const sampleProducts = await Product.find({}).limit(3);
+        sampleProducts.forEach(product => {
             console.log(`- ${product.name}: ${product._id}`);
         });
 

@@ -3,6 +3,7 @@ import ShopContext from "../context/ShopContext.js";
 import { assets } from "../assets/frontend_assets/assets";
 import Title from "../components/Title";
 import ProductItem from "../components/ProductItem";
+import SearchBar from "../components/SearchBar";
 
 const Collection = () => {
   const { products,search,showSearch} = useContext(ShopContext);
@@ -64,11 +65,20 @@ const Collection = () => {
   }, [products, showSearch, search, category, subCategory, sortType]);
 
   return (
-    <main className="page-shell page-pad page-enter">
-      <div className="mb-12 max-w-2xl">
-        <p className="eyebrow mb-4">The complete edit</p>
-        <h1 className="editorial-title">Find your next signature piece.</h1>
-        <p className="mt-5 text-sm leading-7 text-[#746d65]">Explore elevated essentials, statement layers and modern silhouettes curated for every version of you.</p>
+      <main className="page-shell page-enter page-pad">
+      <div className={`relative mb-12 overflow-hidden rounded-[2rem] transition-[min-height] duration-300 ${showSearch ? 'min-h-[470px] sm:min-h-[430px]' : 'min-h-[280px]'}`}>
+        <img
+          src={assets.collection_banner}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-50"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#fffdf9] via-[#fffdf9]/85 to-[#fffdf9]/20"></div>
+        <div className="relative z-10 max-w-2xl px-7 py-12 sm:px-10 sm:py-14">
+          <p className="eyebrow mb-4">The complete edit</p>
+          <h1 className="editorial-title">Find your next signature piece.</h1>
+          <p className="mt-5 max-w-xl text-base leading-[1.6] text-[#5f5851]">Explore elevated essentials, statement layers and modern silhouettes curated for every version of you.</p>
+          <SearchBar />
+        </div>
       </div>
       <div className="flex flex-col gap-8 sm:flex-row sm:gap-10">
       {/* LEFT FILTER SECTION */}
@@ -76,12 +86,12 @@ const Collection = () => {
         {/* Filter dropdown */}
         <p
           onClick={() => setShowFilter(!showFilter)}
-          className="surface-card flex cursor-pointer items-center justify-between gap-2 px-5 py-4 text-sm font-semibold uppercase tracking-[0.14em] sm:border-0 sm:bg-transparent sm:px-0 sm:shadow-none"
+          className="surface-card relative flex cursor-pointer items-center justify-center px-5 py-4 text-center text-sm font-semibold uppercase tracking-[0.14em] sm:border-0 sm:bg-transparent sm:px-0 sm:shadow-none"
         >
           Filter
           <img
             src={assets.dropdown_icon}
-            className={`h-3 sm:hidden transition-all ${
+            className={`absolute right-5 h-3 transition-all sm:hidden ${
               showFilter ? "rotate-180" : ""
             }`}
             alt=""

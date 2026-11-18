@@ -10,7 +10,7 @@ const About = () => {
       <div className='page-shell relative mt-[92px] h-[540px] overflow-hidden rounded-[2rem]'>
         <div className='absolute inset-0 z-10 bg-gradient-to-t from-[#1d1a17]/80 via-[#1d1a17]/20 to-transparent'></div>
         <img 
-          className='absolute inset-0 w-full h-full object-cover object-center' 
+          className='absolute inset-0 w-full h-full object-cover object-center sm:object-top' 
           src={assets.couple_img} 
           alt="About Loomora"
         />

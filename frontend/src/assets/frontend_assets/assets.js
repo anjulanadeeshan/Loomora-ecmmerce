@@ -77,6 +77,8 @@ import cross_icon from './cross_icon.png'
 import loomora_logo from './Loomora_logo.png'
 import charming_lady from './charming-lady-fashionable-blouse-trousers-takes-notes-tablet-girl-posing-background-dresses.jpg'
 import couple_img from './portrait-smiling-beautiful-girl-her-handsome-boyfriend-laughing-happy-cheerful-couple-sunglasses.jpg'
+import contact_hero from './cloths.jpg'
+import collection_banner from './b1.jpg'
 
 export const assets = {
     loomora_logo,
@@ -98,7 +100,9 @@ export const assets = {
     stripe_logo,
     cross_icon,
     charming_lady,
-    couple_img
+    couple_img,
+    contact_hero,
+    collection_banner
 }
 
 export const products = [

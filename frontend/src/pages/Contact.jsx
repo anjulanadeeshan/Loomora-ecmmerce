@@ -10,8 +10,8 @@ const Contact = () => {
       <div className='page-shell relative mt-[92px] h-[460px] overflow-hidden rounded-[2rem]'>
         <div className='absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent z-10'></div>
         <img 
-          className='absolute inset-0 w-full h-full object-cover object-center' 
-          src={assets.charming_lady} 
+          className='absolute inset-0 h-full w-full object-cover object-[50%_50%]'
+          src={assets.contact_hero}
           alt="Contact Loomora"
         />
         <div className='relative z-20 flex h-full flex-col justify-end px-7 pb-14 text-white sm:px-12 sm:pb-16'>
