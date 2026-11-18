@@ -121,6 +121,10 @@ const ShopContextProvider = (props) => {
     setCartItems(cartData);
   }
 
+  const clearCart = () => {
+    setCartItems({});
+  }
+
   // --- ADD THIS FUNCTION (To calculate total price) ---
   const getCartAmount = () => {
     let totalAmount = 0;
@@ -139,7 +143,7 @@ const ShopContextProvider = (props) => {
         }
       }
     }
-    return totalAmount;
+    return Math.round((totalAmount + Number.EPSILON) * 100) / 100;
   }
 
   const value = {
@@ -155,6 +159,7 @@ const ShopContextProvider = (props) => {
     addToCart,
     getCartCount,
     updateQuantity,
+    clearCart,
     getCartAmount,
     navigate,
     user,

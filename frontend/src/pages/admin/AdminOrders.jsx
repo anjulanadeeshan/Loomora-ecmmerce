@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { toast } from 'react-toastify';
 import api from '../../config/api';
 import AdminNavbar from '../../components/AdminNavbar';
@@ -8,6 +8,10 @@ const AdminOrders = () => {
   const [loading, setLoading] = useState(true);
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [statusFilter, setStatusFilter] = useState('all');
+  const [paymentFilter, setPaymentFilter] = useState('all');
+  const [sortBy, setSortBy] = useState('newest');
 
   useEffect(() => {
     fetchOrders();
@@ -94,6 +98,54 @@ const AdminOrders = () => {
 
   const statusOptions = ['Order Placed', 'Packing', 'Shipped', 'Out for delivery', 'Delivered'];
 
+  const formatCurrency = (value) => new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2
+  }).format(Number(value) || 0);
+
+  const filteredOrders = useMemo(() => {
+    const normalizedSearch = searchTerm.trim().toLowerCase();
+
+    return orders
+      .filter((order) => {
+        const customerName = order.userId?.name
+          || `${order.address?.firstName || ''} ${order.address?.lastName || ''}`.trim();
+        const email = order.userId?.email || order.address?.email || '';
+        const searchableItems = order.items?.map((item) => item.name).join(' ') || '';
+        const matchesSearch = !normalizedSearch || [
+          order._id,
+          customerName,
+          email,
+          searchableItems
+        ].some((value) => String(value || '').toLowerCase().includes(normalizedSearch));
+        const matchesStatus = statusFilter === 'all' || order.status === statusFilter;
+        const matchesPayment = paymentFilter === 'all'
+          || (paymentFilter === 'paid' && order.payment)
+          || (paymentFilter === 'unpaid' && !order.payment);
+
+        return matchesSearch && matchesStatus && matchesPayment;
+      })
+      .sort((firstOrder, secondOrder) => {
+        const firstDate = new Date(firstOrder.date).getTime();
+        const secondDate = new Date(secondOrder.date).getTime();
+
+        if (sortBy === 'oldest') return firstDate - secondDate;
+        if (sortBy === 'amount-high') return Number(secondOrder.amount) - Number(firstOrder.amount);
+        if (sortBy === 'amount-low') return Number(firstOrder.amount) - Number(secondOrder.amount);
+        return secondDate - firstDate;
+      });
+  }, [orders, paymentFilter, searchTerm, sortBy, statusFilter]);
+
+  const hasActiveFilters = searchTerm || statusFilter !== 'all' || paymentFilter !== 'all' || sortBy !== 'newest';
+
+  const clearFilters = () => {
+    setSearchTerm('');
+    setStatusFilter('all');
+    setPaymentFilter('all');
+    setSortBy('newest');
+  };
+
   const viewOrderDetails = (order) => {
     setSelectedOrder(order);
     setShowModal(true);
@@ -119,80 +171,173 @@ const AdminOrders = () => {
         <div className="py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8">
-              <h1 className="text-3xl font-bold text-gray-900">Order Management</h1>
-              <p className="text-gray-600 mt-2">View and manage all customer orders</p>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <h1 className="text-3xl font-bold text-gray-900">Order Management</h1>
+                  <p className="text-gray-600 mt-2">View and manage all customer orders</p>
+                </div>
+                <p className="text-sm font-medium text-gray-500">
+                  Showing <span className="text-gray-900">{filteredOrders.length}</span> of {orders.length} orders
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow overflow-hidden">
+            <div className="mb-5 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-[minmax(260px,1fr)_190px_170px_180px_auto]">
+                <label className="relative block">
+                  <span className="sr-only">Search orders</span>
+                  <svg className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7" />
+                    <path d="m20 20-3.5-3.5" />
+                  </svg>
+                  <input
+                    type="search"
+                    value={searchTerm}
+                    onChange={(event) => setSearchTerm(event.target.value)}
+                    placeholder="Search ID, customer, email or item"
+                    className="h-11 w-full rounded-lg border border-gray-300 bg-white pl-10 pr-4 text-sm text-gray-900 outline-none transition focus:border-[#7d263d] focus:ring-2 focus:ring-[#7d263d]/15"
+                  />
+                </label>
+
+                <label>
+                  <span className="sr-only">Filter by order status</span>
+                  <select
+                    value={statusFilter}
+                    onChange={(event) => setStatusFilter(event.target.value)}
+                    className="h-11 w-full rounded-lg border border-gray-300 bg-white px-3 text-sm text-gray-700 outline-none focus:border-[#7d263d] focus:ring-2 focus:ring-[#7d263d]/15"
+                  >
+                    <option value="all">All statuses</option>
+                    {statusOptions.map((status) => (
+                      <option key={status} value={status}>{status}</option>
+                    ))}
+                  </select>
+                </label>
+
+                <label>
+                  <span className="sr-only">Filter by payment status</span>
+                  <select
+                    value={paymentFilter}
+                    onChange={(event) => setPaymentFilter(event.target.value)}
+                    className="h-11 w-full rounded-lg border border-gray-300 bg-white px-3 text-sm text-gray-700 outline-none focus:border-[#7d263d] focus:ring-2 focus:ring-[#7d263d]/15"
+                  >
+                    <option value="all">All payments</option>
+                    <option value="paid">Paid</option>
+                    <option value="unpaid">Unpaid</option>
+                  </select>
+                </label>
+
+                <label>
+                  <span className="sr-only">Sort orders</span>
+                  <select
+                    value={sortBy}
+                    onChange={(event) => setSortBy(event.target.value)}
+                    className="h-11 w-full rounded-lg border border-gray-300 bg-white px-3 text-sm text-gray-700 outline-none focus:border-[#7d263d] focus:ring-2 focus:ring-[#7d263d]/15"
+                  >
+                    <option value="newest">Newest first</option>
+                    <option value="oldest">Oldest first</option>
+                    <option value="amount-high">Amount: high to low</option>
+                    <option value="amount-low">Amount: low to high</option>
+                  </select>
+                </label>
+
+                <button
+                  type="button"
+                  onClick={clearFilters}
+                  disabled={!hasActiveFilters}
+                  className="h-11 rounded-lg border border-gray-300 px-4 text-sm font-semibold text-gray-700 transition hover:border-gray-400 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                  Clear
+                </button>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
               {orders.length === 0 ? (
                 <div className="text-center py-12">
                   <p className="text-gray-500 text-lg">No orders found</p>
                 </div>
+              ) : filteredOrders.length === 0 ? (
+                <div className="px-6 py-14 text-center">
+                  <p className="text-base font-semibold text-gray-900">No matching orders</p>
+                  <p className="mt-1 text-sm text-gray-500">Try changing or clearing the filters.</p>
+                  <button type="button" onClick={clearFilters} className="mt-5 rounded-full bg-[#1d1a17] px-5 py-2 text-sm font-semibold text-white">
+                    Clear filters
+                  </button>
+                </div>
               ) : (
                 <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-gray-200">
+                  <table className="w-full min-w-[1180px] table-fixed divide-y divide-gray-200">
+                    <colgroup>
+                      <col style={{ width: '10%' }} />
+                      <col style={{ width: '17%' }} />
+                      <col style={{ width: '23%' }} />
+                      <col style={{ width: '9%' }} />
+                      <col style={{ width: '9%' }} />
+                      <col style={{ width: '11%' }} />
+                      <col style={{ width: '9%' }} />
+                      <col style={{ width: '12%' }} />
+                    </colgroup>
                     <thead className="bg-gray-50">
                       <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order ID</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Items</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Payment</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        {['Order ID', 'Customer', 'Items', 'Amount', 'Payment', 'Status', 'Date', 'Actions'].map((heading) => (
+                          <th key={heading} className="px-4 py-3.5 text-left text-[11px] font-semibold uppercase tracking-wider text-gray-500">{heading}</th>
+                        ))}
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                      {orders.map((order) => (
-                        <tr key={order._id} className="hover:bg-gray-50">
-                          <td className="px-6 py-4 whitespace-nowrap">
+                      {filteredOrders.map((order) => (
+                        <tr key={order._id} className="align-top transition-colors hover:bg-gray-50/80">
+                          <td className="px-4 py-5 whitespace-nowrap">
                             <div className="text-sm font-medium text-gray-900">#{order._id.slice(-8)}</div>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="text-sm text-gray-900">{order.userId?.name || 'N/A'}</div>
-                            <div className="text-sm text-gray-500">{order.userId?.email || order.address?.email}</div>
+                          <td className="px-4 py-5">
+                            <div className="truncate text-sm font-medium text-gray-900" title={order.userId?.name || `${order.address?.firstName || ''} ${order.address?.lastName || ''}`.trim() || 'N/A'}>
+                              {order.userId?.name || `${order.address?.firstName || ''} ${order.address?.lastName || ''}`.trim() || 'N/A'}
+                            </div>
+                            <div className="mt-0.5 truncate text-xs text-gray-500" title={order.userId?.email || order.address?.email}>{order.userId?.email || order.address?.email}</div>
                           </td>
-                          <td className="px-6 py-4">
-                            <div className="text-sm text-gray-900">
+                          <td className="px-4 py-5">
+                            <div className="space-y-1 text-sm text-gray-900">
                               {order.items.map((item, idx) => (
-                                <div key={idx} className="mb-1">
-                                  {item.name} x{item.quantity} ({item.size})
+                                <div key={idx} className="truncate" title={`${item.name} x${item.quantity} (${item.size})`}>
+                                  <span className="font-medium">{item.name}</span>
+                                  <span className="text-gray-500"> &times;{item.quantity} ({item.size})</span>
                                 </div>
                               ))}
                             </div>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="text-sm font-semibold text-gray-900">${order.amount}</div>
+                          <td className="px-4 py-5 whitespace-nowrap">
+                            <div className="text-sm font-semibold tabular-nums text-gray-900">{formatCurrency(order.amount)}</div>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
+                          <td className="px-4 py-5 whitespace-nowrap">
                             <div className="text-sm text-gray-900">{order.paymentMethod}</div>
                             <div className={`text-xs ${order.payment ? 'text-green-600' : 'text-red-600'}`}>
                               {order.payment ? 'Paid' : 'Unpaid'}
                             </div>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            <span className={`px-2 py-1 text-xs font-semibold rounded ${getStatusColor(order.status)}`}>
+                          <td className="px-4 py-5 whitespace-nowrap">
+                            <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${getStatusColor(order.status)}`}>
                               {order.status}
                             </span>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
+                          <td className="px-4 py-5 whitespace-nowrap">
                             <div className="text-sm text-gray-900">
                               {new Date(order.date).toLocaleDateString()}
                             </div>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="flex gap-2">
+                          <td className="px-4 py-5">
+                            <div className="flex flex-col gap-2">
                               <button
                                 onClick={() => viewOrderDetails(order)}
-                                className="text-sm bg-gray-600 text-white px-3 py-1 rounded hover:bg-gray-700"
+                                className="w-full rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white transition hover:bg-gray-800"
                               >
                                 View
                               </button>
                               <select
                                 value={order.status}
                                 onChange={(e) => updateOrderStatus(order._id, e.target.value)}
-                                className="text-sm border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-black"
+                                aria-label={`Update status for order ${order._id.slice(-8)}`}
+                                className="w-full rounded-md border border-gray-300 bg-white px-2 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7d263d]/20"
                               >
                                 {statusOptions.map((status) => (
                                   <option key={status} value={status}>{status}</option>
@@ -314,10 +459,10 @@ const AdminOrders = () => {
                               <span className="text-sm font-medium text-gray-900">{item.name}</span>
                             </div>
                           </td>
-                          <td className="px-4 py-3 text-sm text-gray-900">${item.price}</td>
+                          <td className="px-4 py-3 text-sm text-gray-900">{formatCurrency(item.price)}</td>
                           <td className="px-4 py-3 text-sm text-gray-900">{item.size}</td>
                           <td className="px-4 py-3 text-sm text-gray-900">{item.quantity}</td>
-                          <td className="px-4 py-3 text-sm font-semibold text-gray-900">${(item.price * item.quantity).toFixed(2)}</td>
+                          <td className="px-4 py-3 text-sm font-semibold text-gray-900">{formatCurrency(item.price * item.quantity)}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -331,15 +476,15 @@ const AdminOrders = () => {
                   <div className="w-64 space-y-2">
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-600">Subtotal:</span>
-                      <span className="font-medium">${selectedOrder.amount - 10}</span>
+                      <span className="font-medium">{formatCurrency(selectedOrder.amount - 10)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-600">Delivery Fee:</span>
-                      <span className="font-medium">$10</span>
+                      <span className="font-medium">{formatCurrency(10)}</span>
                     </div>
                     <div className="flex justify-between text-lg font-bold border-t pt-2">
                       <span>Total:</span>
-                      <span>${selectedOrder.amount}</span>
+                      <span>{formatCurrency(selectedOrder.amount)}</span>
                     </div>
                   </div>
                 </div>

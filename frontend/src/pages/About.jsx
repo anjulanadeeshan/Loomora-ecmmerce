@@ -29,16 +29,16 @@ const About = () => {
         <div className='max-w-7xl mx-auto'>
           <div className='grid md:grid-cols-2 gap-12 lg:gap-16 items-center mb-20'>
             
-            <div className='relative group'>
+            <div className='relative group order-2 md:order-1'>
               <div className='absolute -inset-3 rounded-[2rem] border border-[#b4935f]/40'></div>
               <img 
                 className='relative aspect-[4/5] w-full rounded-[2rem] object-cover shadow-2xl transition duration-500 group-hover:scale-[1.01]'
-                src={assets.about_img} 
+                src={assets.charming_lady} 
                 alt="About Loomora"
               />
             </div>
 
-            <div className='flex flex-col gap-8 text-gray-600'>
+            <div className='order-1 flex flex-col gap-8 text-gray-600 md:order-2'>
               <div>
                 <p className='eyebrow mb-4'>Created with intention</p>
                 <h2 className='display-font mb-6 text-5xl text-[#1d1a17]'>The Loomora Journey</h2>

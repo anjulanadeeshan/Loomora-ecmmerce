@@ -81,6 +81,9 @@ import couple_img from './portrait-smiling-beautiful-girl-her-handsome-boyfriend
 import contact_hero from './cloths.jpg'
 import collection_banner from './b1.jpg'
 import newsletter_banner from './b16.jpg'
+import feedback_avatar_1 from './people/1.png'
+import feedback_avatar_2 from './people/2.png'
+import feedback_avatar_3 from './people/3.png'
 export const assets = {
     loomora_white,
     loomora_black,
@@ -107,6 +110,9 @@ export const assets = {
     contact_hero,
     collection_banner,
     newsletter_banner,
+    feedback_avatar_1,
+    feedback_avatar_2,
+    feedback_avatar_3,
 }
 
 export const products = [

@@ -21,6 +21,23 @@ const NavBar = () => {
     setVisible(false)
   }, [location.pathname])
 
+  useEffect(() => {
+    if (!visible) return
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setVisible(false)
+    }
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [visible])
+
   const handleSearch = () => {
     if (location.pathname !== '/collection') {
       setShowSearch(true)
@@ -43,7 +60,7 @@ const NavBar = () => {
   const mobileLinkClass = 'mobile-nav-link rounded-2xl px-5 py-4 text-sm font-semibold tracking-[0.16em] transition-colors'
 
   return (
-    <header className={`${isHome ? 'absolute border-white/15 bg-transparent' : 'fixed border-[#ded7cc]/80 bg-[#fffdf9]/90 backdrop-blur-xl'} inset-x-0 top-0 z-50 border-b`}>
+    <header className={`${isHome ? 'absolute border-white/15 bg-transparent' : 'fixed border-[#ded7cc] bg-[#fffdf9]'} inset-x-0 top-0 z-50 border-b`}>
       <div className='page-shell flex h-[88px] items-center justify-between gap-5'>
         <Link to='/' className='shrink-0' aria-label='Loomora home'>
           <img
@@ -105,7 +122,7 @@ const NavBar = () => {
               <line x1='3' x2='21' y1='6' y2='6' />
               <path d='M16 10a4 4 0 0 1-8 0' />
             </svg>
-            {isHome && <span className='text-xs font-semibold'>Bag</span>}
+            {/* {isHome && <span className='text-xs font-semibold'>Bag</span>} */}
             {cartCount > 0 && <span className='absolute -right-1 -top-1 grid h-4 min-w-4 place-items-center rounded-full bg-[#7d263d] px-1 text-[9px] text-white'>{cartCount}</span>}
           </Link>
 
@@ -139,7 +156,14 @@ const NavBar = () => {
         </div>
       </div>
 
-      <div className={`fixed inset-0 z-50 bg-[#f8f5ef] transition-transform duration-500 sm:hidden ${visible ? 'translate-x-0' : 'translate-x-full'}`} aria-hidden={!visible}>
+      <div
+        className={`fixed inset-0 z-[70] h-dvh overflow-y-auto bg-[#fffdf9] transition-all duration-500 sm:hidden ${
+          visible
+            ? 'visible translate-x-0 opacity-100'
+            : 'invisible translate-x-full opacity-0 pointer-events-none'
+        }`}
+        aria-hidden={!visible}
+      >
         <div className='page-shell flex h-[88px] items-center justify-between border-b border-[#ded7cc]'>
           <img src={assets.loomora_black} className='h-10 w-auto object-contain' alt='Loomora' />
           <button type='button' onClick={() => setVisible(false)} className='grid h-11 w-11 place-items-center rounded-full border border-[#ded7cc] text-xl text-[#1d1a17] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7d263d]' aria-label='Close menu'>×</button>

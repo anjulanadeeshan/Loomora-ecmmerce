@@ -1,15 +1,18 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import ShopContext from "../context/ShopContext.js";
 import { assets } from "../assets/frontend_assets/assets";
 import RelatedProducts from "../components/RelatedProducts";
 
 const Product = () => {
   const { productId } = useParams();
-  const { products,currency,addToCart } = useContext(ShopContext);
+  const navigate = useNavigate();
+  const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
+  const relatedRef = useRef(null);
 
   const fetchProductData = useCallback(() => {
     const product = products.find((item) => item._id === productId);
@@ -24,6 +27,35 @@ const Product = () => {
     fetchProductData();
     window.scrollTo(0, 0);
   }, [fetchProductData]);
+
+  const handleAddToCart = () => {
+    if (productData.sizes && productData.sizes.length > 0 && !size) {
+      toast.error("Please select a size");
+      return;
+    }
+    addToCart(productData._id, size);
+    toast.success("Added to cart!");
+
+    setTimeout(() => {
+      if (relatedRef.current) {
+        relatedRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        const el = document.getElementById("related-products");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    }, 60);
+  };
+
+  const handleProceedToPayment = async () => {
+    if (productData.sizes && productData.sizes.length > 0 && !size) {
+      toast.error("Please select a size");
+      return;
+    }
+    await addToCart(productData._id, size);
+    navigate("/place-order");
+  };
 
   return productData ? (
     <main className="page-shell page-pad page-enter">
@@ -87,10 +119,23 @@ const Product = () => {
             </div>
           </div>
 
-          {/* Add to Cart Button */}
-          <button onClick={()=>addToCart(productData._id, size)} className="fashion-button w-full sm:w-auto">
-            ADD TO CART
-          </button>
+          {/* Action Buttons: Add to Cart & Proceed to Payment */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <button 
+              type="button"
+              onClick={handleAddToCart} 
+              className="fashion-button product-action-button w-full flex-1 justify-center whitespace-nowrap"
+            >
+              ADD TO CART
+            </button>
+            <button 
+              type="button"
+              onClick={handleProceedToPayment} 
+              className="product-action-button product-action-button-burgundy w-full flex-1 justify-center whitespace-nowrap"
+            >
+              PROCEED TO PAYMENT
+            </button>
+          </div>
 
           {/* Additional Product Policies */}
           <div className="mt-7 flex flex-col gap-2 text-xs text-[#746d65]">
@@ -117,10 +162,12 @@ const Product = () => {
         </div>
       </div>
       {/* display related products */}
-      <RelatedProducts
-        category={productData.category}
-        subCategory={productData.subCategory}
-      />
+      <div id="related-products" ref={relatedRef} className="scroll-mt-28">
+        <RelatedProducts
+          category={productData.category}
+          subCategory={productData.subCategory}
+        />
+      </div>
     </main>
   ) : (
     <div className="opacity-0"></div>

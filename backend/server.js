@@ -9,6 +9,8 @@ const connectDB = require('./config/mongodb');
 const userRouter = require('./routes/userRoute');
 const productRouter = require('./routes/productRoute');
 const orderRouter = require('./routes/orderRoute');
+const feedbackRouter = require('./routes/feedbackRoute');
+const newsletterRouter = require('./routes/newsletterRoute');
 
 // Initialize Express app
 const app = express();
@@ -31,6 +33,8 @@ app.use('/uploads', express.static('uploads'));
 app.use('/api/user', userRouter);
 app.use('/api/product', productRouter);
 app.use('/api/order', orderRouter);
+app.use('/api/feedback', feedbackRouter);
+app.use('/api/newsletter', newsletterRouter);
 
 // Health check endpoint
 app.get('/', (req, res) => {

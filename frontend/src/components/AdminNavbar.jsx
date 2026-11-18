@@ -21,7 +21,8 @@ const AdminNavbar = () => {
     { path: '/admin/dashboard', label: 'DASHBOARD' },
     { path: '/admin/products', label: 'PRODUCTS' },
     { path: '/admin/orders', label: 'ORDERS' },
-    { path: '/admin/users', label: 'USERS' }
+    { path: '/admin/users', label: 'USERS' },
+    { path: '/admin/feedback', label: 'FEEDBACK' }
   ];
 
   return (

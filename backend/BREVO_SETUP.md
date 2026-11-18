@@ -1,21 +1,21 @@
 # Brevo Email Integration Setup Guide
 
+> This project sends email through the Brevo REST API in `config/emailService.js`.
+> It requires a Brevo API key and an active, verified sender. An SMTP key is not
+> required unless the implementation is changed to use Nodemailer/SMTP.
+
 ## Step 1: Create a Brevo Account
 
 1. Go to [Brevo](https://www.brevo.com/) (formerly Sendinblue)
 2. Click **Sign Up** (Free plan available - 300 emails/day)
 3. Complete registration and verify your email
 
-## Step 2: Get Your SMTP Credentials
+## Step 2: Create an API Key
 
 1. **Login to Brevo Dashboard**
 2. Click on your profile (top right) → **SMTP & API**
-3. Navigate to **SMTP** tab
-4. You'll see:
-   - **SMTP Server:** `smtp-relay.brevo.com`
-   - **Port:** 587
-   - **Login:** Your Brevo login email
-   - **Master Password:** Click "Create" or "View" to get your SMTP key
+3. Navigate to **API keys & MCP**
+4. Generate an API key and copy it when Brevo displays it
 
 ## Step 3: Configure Your .env File
 
@@ -23,18 +23,16 @@ Update your `.env` file with the credentials:
 
 ```env
 # Brevo Email Configuration
-BREVO_SMTP_USER=your_brevo_login_email@example.com
-BREVO_SMTP_PASSWORD=xsmtpsib-your-actual-smtp-key-here
-EMAIL_FROM_ADDRESS=noreply@yourdomain.com
+BREVO_API_KEY=xkeysib-your-actual-api-key-here
+EMAIL_FROM_ADDRESS=your-verified-sender@example.com
 EMAIL_FROM_NAME=Loomora
 FRONTEND_URL=http://localhost:5173
 ```
 
 ### Important Notes:
 
-- **BREVO_SMTP_USER**: Use the email you registered with Brevo
-- **BREVO_SMTP_PASSWORD**: Use the SMTP key (NOT your Brevo login password)
-- **EMAIL_FROM_ADDRESS**: The "from" email (can be any email, but use verified domain in production)
+- **BREVO_API_KEY**: The API key from Brevo's **API keys & MCP** tab
+- **EMAIL_FROM_ADDRESS**: Must exactly match an active, verified Brevo sender
 - **EMAIL_FROM_NAME**: Display name in emails
 - **FRONTEND_URL**: Your frontend URL (for reset links)
 
@@ -90,22 +88,23 @@ For higher volume, upgrade to paid plans.
 - Add SPF and DKIM records to your domain
 - Use a verified email address
 
-### Issue: "Connection timeout"
+### Issue: "Sender is not valid"
 **Solution:**
-- Check firewall allows port 587
-- Verify SMTP server: `smtp-relay.brevo.com`
+- Open **Settings > Senders, Domains & Dedicated IPs** in Brevo
+- Verify the address configured as `EMAIL_FROM_ADDRESS`
+- Make sure the configured address exactly matches the active sender
 
-## Alternative: Use Brevo API Instead of SMTP
+## Optional alternative: SMTP
 
-If you prefer API over SMTP:
+The current project already uses the Brevo API. Only configure SMTP if you
+replace the API implementation with Nodemailer or another SMTP client. SMTP
+authentication requires an SMTP key; the API key cannot be used as the SMTP
+password.
 
-1. Install Brevo SDK:
+The Brevo SDK used by the current implementation is installed with:
 ```bash
 npm install @getbrevo/brevo
 ```
-
-2. Get API key from Brevo → API Keys
-3. Use API instead of SMTP in emailService.js
 
 ## Production Checklist
 

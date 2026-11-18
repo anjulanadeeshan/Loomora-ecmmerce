@@ -8,7 +8,7 @@ import { toast } from 'react-toastify'
 
 const PlaceOrder = () => {
 
-  const { cartItems, products, getCartAmount, navigate } = useContext(ShopContext);
+  const { cartItems, products, getCartAmount, navigate, clearCart } = useContext(ShopContext);
   const navigation = useNavigate();
   
   const [method, setMethod] = useState('cod');
@@ -81,7 +81,7 @@ const PlaceOrder = () => {
       const orderData = {
         userId: user.id,
         items: orderItems,
-        amount: getCartAmount() + 10, // Including delivery fee
+        amount: Math.round(((getCartAmount() + 10) + Number.EPSILON) * 100) / 100, // Including delivery fee
         address: formData,
         paymentMethod: method.toUpperCase()
       };
@@ -91,7 +91,7 @@ const PlaceOrder = () => {
 
       if (response.success) {
         toast.success('Order placed successfully!');
-        // Clear cart (you may need to implement this in context)
+        clearCart();
         navigation('/orders');
       } else {
         toast.error(response.message || 'Failed to place order');

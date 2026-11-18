@@ -15,7 +15,7 @@ const LatestCollection = () => {
   }, [products]);
 
   return (
-    <section className="section-space">
+    <section id="latest-collection" className="section-space scroll-mt-24">
       <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
         <Title text1="Freshly curated" text2="Latest collection" />
         <p className="max-w-md text-sm leading-7 text-[#746d65] md:text-right">

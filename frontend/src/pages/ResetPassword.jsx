@@ -72,7 +72,7 @@ const ResetPassword = () => {
       </div>
 
       <p className='text-sm text-gray-600 text-center mb-4'>
-        Enter your reset token and new password
+        Enter the 6-digit verification code from your email and your new password
       </p>
 
       <form onSubmit={handleSubmit} className='w-full flex flex-col gap-4'>
@@ -90,9 +90,12 @@ const ResetPassword = () => {
           type="text"
           name="resetToken"
           className='w-full rounded-xl border px-4 py-3'
-          placeholder='Reset Token'
+          placeholder='6-Digit Verification Code'
           value={formData.resetToken}
           onChange={handleChange}
+          inputMode="numeric"
+          pattern="[0-9]{6}"
+          maxLength={6}
           required
         />
 

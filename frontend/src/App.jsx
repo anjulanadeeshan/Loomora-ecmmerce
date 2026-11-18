@@ -16,6 +16,7 @@ import AdminProducts from "./pages/admin/AdminProducts";
 import AdminOrders from "./pages/admin/AdminOrders";
 import AdminUsers from "./pages/admin/AdminUsers";
 import AdminLogin from "./pages/admin/AdminLogin";
+import AdminFeedback from "./pages/admin/AdminFeedback";
 import AdminProtectedRoute from "./components/AdminProtectedRoute";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -50,6 +51,7 @@ const App = () => {
         <Route path="/admin/products" element={<AdminProtectedRoute><AdminProducts /></AdminProtectedRoute>} />
         <Route path="/admin/orders" element={<AdminProtectedRoute><AdminOrders /></AdminProtectedRoute>} />
         <Route path="/admin/users" element={<AdminProtectedRoute><AdminUsers /></AdminProtectedRoute>} />
+        <Route path="/admin/feedback" element={<AdminProtectedRoute><AdminFeedback /></AdminProtectedRoute>} />
       </Routes>
       {!isAdminRoute && <Footer />}
     </div>

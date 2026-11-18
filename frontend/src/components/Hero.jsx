@@ -12,6 +12,18 @@ const Hero = () => {
     'Layers with intent'
   ]
 
+  const handleEditHighlight = (highlight) => {
+    if (highlight === 'New arrivals') {
+      document.querySelector('#latest-collection')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+      return
+    }
+
+    navigate('/collection')
+  }
+
   return (
     <section className='relative isolate min-h-[720px] overflow-hidden bg-[#211619] text-white sm:min-h-[760px] lg:min-h-screen'>
       <img
@@ -28,7 +40,7 @@ const Hero = () => {
           <div className='max-w-3xl'>
             <button
               type='button'
-              onClick={() => navigate('/collection')}
+              onClick={() => handleEditHighlight(highlight)}
               className='group mb-7 inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/90 transition hover:text-white'
             >
               <span>The 2026 edit</span>
@@ -65,14 +77,14 @@ const Hero = () => {
           <div className='hidden justify-self-end lg:block'>
             <p className='mb-5 text-[10px] font-bold uppercase tracking-[0.24em] text-white/50'>Explore the edit</p>
             <div className='space-y-4'>
-              {editHighlights.map((highlight, index) => (
+              {editHighlights.map((highlight) => (
                 <button
                   key={highlight}
                   type='button'
                   onClick={() => navigate('/collection')}
-                  className={`group flex items-center gap-4 text-left text-2xl font-semibold tracking-[-0.035em] transition xl:text-[1.75rem] ${index === 2 ? 'text-white' : 'text-white/35 hover:text-white/75'}`}
+                  className='group flex items-center gap-4 text-left text-2xl font-semibold tracking-[-0.035em] text-white/35 transition hover:text-white focus-visible:text-white focus-visible:outline-none xl:text-[1.75rem]'
                 >
-                  <span className={`text-sm text-[#ff4f8b] transition ${index === 2 ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} aria-hidden='true'>▶</span>
+                  <span className='text-sm text-[#ff4f8b] opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100' aria-hidden='true'>▶</span>
                   {highlight}
                 </button>
               ))}

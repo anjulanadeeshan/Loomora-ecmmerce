@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import ShopContext from '../context/ShopContext.js'
 import { loginUser, registerUser, adminLogin } from '../services/userService'
 import { toast } from 'react-toastify'
+import api from '../config/api'
 
 const Login = () => {
 
@@ -14,12 +15,25 @@ const Login = () => {
     password: ''
   });
   const [loading, setLoading] = useState(false);
+  const [profileFile, setProfileFile] = useState(null);
+  const [profilePreview, setProfilePreview] = useState('');
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleProfileChange = (event) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    if (!file.type.startsWith('image/') || file.size > 5 * 1024 * 1024) {
+      toast.error('Please select an image smaller than 5MB');
+      return;
+    }
+    setProfileFile(file);
+    setProfilePreview(URL.createObjectURL(file));
   };
 
   const onSubmitHandler = async (event) => {
@@ -36,7 +50,21 @@ const Login = () => {
           setLoading(false);
           return;
         }
-        response = await registerUser(formData.name, formData.email, formData.password);
+        let profilePicture = '';
+        if (profileFile) {
+          const formDataUpload = new FormData();
+          formDataUpload.append('profilePicture', profileFile);
+          const uploadResponse = await api.post('/api/user/profile-upload', formDataUpload, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+          });
+          if (!uploadResponse.data.success) {
+            toast.error(uploadResponse.data.message || 'Profile picture upload failed');
+            setLoading(false);
+            return;
+          }
+          profilePicture = uploadResponse.data.url;
+        }
+        response = await registerUser(formData.name, formData.email, formData.password, profilePicture);
       } else {
         // Login existing user or admin
         if (isAdminLogin) {
@@ -113,15 +141,26 @@ const Login = () => {
 
         {/* Name Input - Only visible during Sign Up */}
         {currentState === 'Sign Up' && !isAdminLogin && (
-          <input 
-            type="text" 
-            name="name"
-            className='w-full rounded-xl border px-4 py-3'
-            placeholder='Name' 
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+          <>
+            <label className='flex w-full cursor-pointer flex-col items-center gap-2 rounded-xl border border-dashed border-[#ded7cc] p-4 text-sm text-[#746d65]'>
+              {profilePreview ? (
+                <img src={profilePreview} alt='Profile preview' className='h-20 w-20 rounded-full object-cover' />
+              ) : (
+                <span className='grid h-20 w-20 place-items-center rounded-full bg-[#f1ebe2] text-2xl text-[#7d263d]'>+</span>
+              )}
+              <span>{profileFile ? 'Change profile picture' : 'Add profile picture'}</span>
+              <input type='file' accept='image/*' className='hidden' onChange={handleProfileChange} />
+            </label>
+            <input 
+              type="text" 
+              name="name"
+              className='w-full rounded-xl border px-4 py-3'
+              placeholder='Name' 
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </>
         )}
         
         {/* Email & Password Inputs */}

@@ -1,12 +1,13 @@
 import api from '../config/api';
 
 // User Registration
-export const registerUser = async (name, email, password) => {
+export const registerUser = async (name, email, password, profilePicture = '') => {
     try {
         const response = await api.post('/api/user/register', {
             name,
             email,
-            password
+            password,
+            profilePicture
         });
         return response.data;
     } catch (error) {
@@ -92,11 +93,11 @@ export const requestPasswordReset = async (email) => {
 };
 
 // Reset Password with Token
-export const resetPassword = async (email, resetToken, newPassword) => {
+export const resetPassword = async (email, verificationCode, newPassword) => {
     try {
         const response = await api.post('/api/user/reset-password', {
             email,
-            resetToken,
+            resetToken: verificationCode,
             newPassword
         });
         return response.data;

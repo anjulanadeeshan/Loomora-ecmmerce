@@ -16,7 +16,7 @@ const api = axios.create({
 api.interceptors.request.use(
     (config) => {
         // Admin endpoints that require admin token
-        const adminEndpoints = ['/admin', '/product', '/order/list', '/order/status', '/order/payment-status', '/order/stats', '/user/list', '/user/stats'];
+        const adminEndpoints = ['/admin', '/product', '/order/list', '/order/status', '/order/payment-status', '/order/stats', '/user/list', '/user/stats', '/feedback/list', '/feedback/status', '/feedback/remove'];
         const isAdminRequest = adminEndpoints.some(endpoint => config.url?.includes(endpoint));
         
         if (isAdminRequest) {
@@ -43,7 +43,7 @@ api.interceptors.response.use(
         // Check if response data indicates jwt expired
         if (response.data && !response.data.success && response.data.message === 'jwt expired') {
             // Check if it's an admin request
-            const adminEndpoints = ['/admin', '/product', '/order/list', '/order/status', '/order/payment-status', '/order/stats', '/user/list', '/user/stats'];
+            const adminEndpoints = ['/admin', '/product', '/order/list', '/order/status', '/order/payment-status', '/order/stats', '/user/list', '/user/stats', '/feedback/list', '/feedback/status', '/feedback/remove'];
             const isAdminRequest = adminEndpoints.some(endpoint => response.config.url?.includes(endpoint));
             
             if (isAdminRequest) {
@@ -61,7 +61,7 @@ api.interceptors.response.use(
     (error) => {
         if (error.response?.status === 401) {
             // Check if it's an admin request
-            const adminEndpoints = ['/admin', '/product', '/order/list', '/order/status', '/order/payment-status', '/order/stats', '/user/list', '/user/stats'];
+            const adminEndpoints = ['/admin', '/product', '/order/list', '/order/status', '/order/payment-status', '/order/stats', '/user/list', '/user/stats', '/feedback/list', '/feedback/status', '/feedback/remove'];
             const isAdminRequest = adminEndpoints.some(endpoint => error.config?.url?.includes(endpoint));
             
             if (isAdminRequest) {

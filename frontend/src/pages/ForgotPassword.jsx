@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
-  const [resetToken, setResetToken] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -18,9 +17,6 @@ const ForgotPassword = () => {
 
       if (response.success) {
         toast.success(response.message);
-        // Store the reset token (in production, this would be sent via email)
-        setResetToken(response.resetToken);
-        
         // Redirect to reset password page with email
         setTimeout(() => {
           navigate(`/reset-password?email=${encodeURIComponent(email)}`);
@@ -68,15 +64,6 @@ const ForgotPassword = () => {
           {loading ? 'Sending...' : 'Send Reset Link'}
         </button>
 
-        {resetToken && (
-          <div className='mt-4 p-4 bg-yellow-50 border border-yellow-300 rounded'>
-            <p className='text-sm font-semibold mb-2'>Development Mode - Reset Token:</p>
-            <p className='text-xs break-all bg-white p-2 rounded border'>{resetToken}</p>
-            <p className='text-xs text-gray-600 mt-2'>
-              Copy this token - you'll need it on the next page.
-            </p>
-          </div>
-        )}
       </form>
 
       <div className='w-full text-center mt-4'>

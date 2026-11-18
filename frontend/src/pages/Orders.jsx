@@ -2,6 +2,7 @@ import React, { useCallback, useContext, useEffect, useState } from 'react'
 import ShopContext from '../context/ShopContext.js'
 import { getUserOrders } from '../services/orderService'
 import { toast } from 'react-toastify'
+import api from '../config/api'
 
 const Orders = () => {
 
@@ -10,6 +11,10 @@ const Orders = () => {
   const [loading, setLoading] = useState(true);
   const [trackingOrderId, setTrackingOrderId] = useState(null);
   const [trackingLoading, setTrackingLoading] = useState(false);
+  const [feedbackOrderId, setFeedbackOrderId] = useState(null);
+  const [feedbackRating, setFeedbackRating] = useState(5);
+  const [feedbackMessage, setFeedbackMessage] = useState('');
+  const [feedbackLoading, setFeedbackLoading] = useState(false);
 
   const fetchOrders = useCallback(async () => {
     if (!user) {
@@ -69,6 +74,33 @@ const Orders = () => {
     }
   };
 
+  const submitFeedback = async (orderId) => {
+    if (!feedbackMessage.trim()) {
+      toast.error('Please write a feedback message');
+      return;
+    }
+    setFeedbackLoading(true);
+    try {
+      const response = await api.post('/api/feedback/add', {
+        orderId,
+        rating: feedbackRating,
+        message: feedbackMessage.trim()
+      });
+      if (response.data.success) {
+        toast.success(response.data.message);
+        setFeedbackOrderId(null);
+        setFeedbackMessage('');
+        setFeedbackRating(5);
+      } else {
+        toast.error(response.data.message || 'Unable to submit feedback');
+      }
+    } catch (error) {
+      toast.error(error.response?.data?.message || 'Unable to submit feedback');
+    } finally {
+      setFeedbackLoading(false);
+    }
+  };
+
   if (loading) {
     return (
       <div className='page-shell page-pad flex min-h-[60vh] items-center justify-center'>
@@ -125,20 +157,31 @@ const Orders = () => {
                         </div>
 
                         {/* Right Side: Order Status & Actions */}
-                        <div className='md:w-1/2 flex justify-between items-center'>
+                        <div className='flex w-full flex-col items-start gap-4 md:w-1/2 md:flex-row md:items-center md:justify-end'>
                             <div className='flex items-center gap-2'>
                                 <p className={`min-w-2 h-2 rounded-full ${getStatusColor(order.status)}`}></p>
                                 <p className='text-sm md:text-base'>{order.status}</p>
                             </div>
-                            
-                            <button 
-                                onClick={() => trackOrder(order._id)}
-                                aria-expanded={trackingOrderId === order._id}
-                                disabled={trackingLoading}
-                                className='rounded-full border border-[#1d1a17] px-5 py-2 text-xs font-semibold uppercase tracking-wider transition hover:bg-[#1d1a17] hover:text-white'
-                            >
-                                {trackingLoading && trackingOrderId !== order._id ? 'Checking...' : trackingOrderId === order._id ? 'Hide Tracking' : 'Track Order'}
-                            </button>
+
+                            <div className='flex flex-wrap items-center gap-3'>
+                                <button
+                                    onClick={() => trackOrder(order._id)}
+                                    aria-expanded={trackingOrderId === order._id}
+                                    disabled={trackingLoading}
+                                    className='rounded-full border border-[#1d1a17] px-5 py-2 text-xs font-semibold uppercase tracking-wider transition hover:bg-[#1d1a17] hover:text-white'
+                                >
+                                    {trackingLoading && trackingOrderId !== order._id ? 'Checking...' : trackingOrderId === order._id ? 'Hide Tracking' : 'Track Order'}
+                                </button>
+                                {order.status === 'Delivered' && (
+                                    <button
+                                        type='button'
+                                        onClick={() => setFeedbackOrderId(feedbackOrderId === order._id ? null : order._id)}
+                                        className='rounded-full border border-[#7d263d] px-5 py-2 text-xs font-semibold uppercase tracking-wider text-[#7d263d] transition hover:bg-[#7d263d] hover:text-white'
+                                    >
+                                        {feedbackOrderId === order._id ? 'Close Feedback' : 'Add Feedback'}
+                                    </button>
+                                )}
+                            </div>
                         </div>
 
                         {trackingOrderId === order._id && (
@@ -167,6 +210,41 @@ const Orders = () => {
                                         );
                                     })}
                                 </ol>
+                            </div>
+                        )}
+
+                        {feedbackOrderId === order._id && (
+                            <div className='w-full rounded-2xl border border-[#ded7cc] bg-[#fffdf9] p-5'>
+                                <p className='mb-4 text-sm font-bold text-[#1d1a17]'>Share feedback for this order</p>
+                                <div className='mb-4 flex gap-2' aria-label='Rating'>
+                                    {[1, 2, 3, 4, 5].map((rating) => (
+                                        <button
+                                            key={rating}
+                                            type='button'
+                                            onClick={() => setFeedbackRating(rating)}
+                                            className={`text-2xl transition ${rating <= feedbackRating ? 'text-[#b4935f]' : 'text-[#ded7cc]'}`}
+                                            aria-label={`${rating} stars`}
+                                        >
+                                            ★
+                                        </button>
+                                    ))}
+                                </div>
+                                <textarea
+                                    value={feedbackMessage}
+                                    onChange={(event) => setFeedbackMessage(event.target.value)}
+                                    maxLength={500}
+                                    rows={4}
+                                    className='w-full resize-none rounded-xl border px-4 py-3 text-sm'
+                                    placeholder='Tell us about your Loomora experience'
+                                />
+                                <button
+                                    type='button'
+                                    onClick={() => submitFeedback(order._id)}
+                                    disabled={feedbackLoading}
+                                    className='fashion-button mt-4'
+                                >
+                                    {feedbackLoading ? 'Submitting...' : 'Submit Feedback'}
+                                </button>
                             </div>
                         )}
                     </div>

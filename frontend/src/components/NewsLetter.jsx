@@ -1,17 +1,42 @@
 import React, { useState } from 'react'
+import { toast } from 'react-toastify'
 import { assets } from '../assets/frontend_assets/assets'
+import api from '../config/api'
 
 const NewsLetter = () => {
   const [email, setEmail] = useState('')
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [status, setStatus] = useState('idle')
+  const [feedbackMessage, setFeedbackMessage] = useState('')
 
-  const onSubmitHandler = (event) => {
+  const onSubmitHandler = async (event) => {
     event.preventDefault()
-    setIsSubmitted(true)
-    setTimeout(() => {
+    setStatus('loading')
+    setFeedbackMessage('')
+
+    try {
+      const response = await api.post('/api/newsletter/subscribe', { email })
+
+      if (!response.data.success) {
+        throw new Error(response.data.message || 'Unable to subscribe')
+      }
+
       setEmail('')
-      setIsSubmitted(false)
-    }, 3000)
+      setStatus('success')
+      setFeedbackMessage(response.data.message)
+
+      if (response.data.emailSent) {
+        toast.success(response.data.message)
+      } else {
+        toast.info(response.data.message)
+      }
+    } catch (error) {
+      setStatus('idle')
+      const message = error.response?.data?.message
+        || error.message
+        || 'Unable to subscribe. Please try again.'
+      setFeedbackMessage(message)
+      toast.error(message)
+    }
   }
 
   return (
@@ -33,11 +58,14 @@ const NewsLetter = () => {
           <p className='eyebrow'>Join the Loomora list</p>
           <form onSubmit={onSubmitHandler} className='mt-7'>
             <div className='flex flex-col gap-3 sm:flex-row'>
-              <input className='min-h-14 flex-1 rounded-full border px-6 text-sm' type='email' placeholder='Your email address' value={email} onChange={(event) => setEmail(event.target.value)} required />
-              <button type='submit' disabled={isSubmitted} className='fashion-button min-w-44 disabled:cursor-not-allowed disabled:opacity-60'>
-                {isSubmitted ? 'You are in' : 'Subscribe'}
+              <input className='min-h-14 flex-1 rounded-full border px-6 text-sm' type='email' placeholder='Your email address' value={email} onChange={(event) => { setEmail(event.target.value); setStatus('idle'); setFeedbackMessage('') }} required />
+              <button type='submit' disabled={status !== 'idle'} className='fashion-button min-w-44 disabled:cursor-not-allowed disabled:opacity-60'>
+                {status === 'loading' ? 'Subscribing...' : status === 'success' ? 'You are in' : 'Subscribe'}
               </button>
             </div>
+            <p className='mt-3 min-h-5 text-xs text-[#681f34]' aria-live='polite'>
+              {feedbackMessage}
+            </p>
           </form>
           <div className='mt-6 flex flex-wrap gap-x-7 gap-y-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#8c847b]'>
             <span>Exclusive access</span>

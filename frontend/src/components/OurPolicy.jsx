@@ -3,7 +3,7 @@ import { assets } from '../assets/frontend_assets/assets'
 
 const OurPolicy = () => {
   return (
-    <section className='section-space'>
+    <section className='pt-16 sm:pt-20 lg:pt-24 pb-6 sm:pb-8'>
       <div className='mb-12 max-w-2xl'>
         <p className='eyebrow mb-4'>The Loomora promise</p>
         <h2 className='editorial-title text-[#1d1a17]'>Beautifully simple, from click to closet.</h2>

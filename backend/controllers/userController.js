@@ -1,9 +1,16 @@
 const validator = require('validator');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { v2: cloudinary } = require('cloudinary');
 const crypto = require('crypto');
 const User = require('../models/userModel');
 const { sendPasswordResetEmail, sendWelcomeEmail } = require('../config/emailService');
+
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
 
 // Create JWT token
 const createToken = (id) => {
@@ -37,7 +44,8 @@ const loginUser = async (req, res) => {
                 id: user._id,
                 name: user.name,
                 email: user.email,
-                role: user.role
+                role: user.role,
+                profilePicture: user.profilePicture
             }
         });
 
@@ -50,7 +58,7 @@ const loginUser = async (req, res) => {
 // User Register
 const registerUser = async (req, res) => {
     try {
-        const { name, email, password } = req.body;
+        const { name, email, password, profilePicture = '' } = req.body;
 
         // Check if user already exists
         const exists = await User.findOne({ email });
@@ -76,7 +84,8 @@ const registerUser = async (req, res) => {
         const newUser = new User({
             name,
             email,
-            password: hashedPassword
+            password: hashedPassword,
+            profilePicture
         });
 
         const user = await newUser.save();
@@ -96,7 +105,8 @@ const registerUser = async (req, res) => {
                 id: user._id,
                 name: user.name,
                 email: user.email,
-                role: user.role
+                role: user.role,
+                profilePicture: user.profilePicture
             }
         });
 
@@ -149,18 +159,18 @@ const requestPasswordReset = async (req, res) => {
             return res.json({ success: false, message: 'No account found with this email' });
         }
 
-        // Generate reset token
-        const resetToken = crypto.randomBytes(32).toString('hex');
-        const hashedToken = crypto.createHash('sha256').update(resetToken).digest('hex');
+        // Generate a 6-digit verification code
+        const verificationCode = crypto.randomInt(100000, 1000000).toString();
+        const hashedCode = crypto.createHash('sha256').update(verificationCode).digest('hex');
 
-        // Save hashed token and expiry (1 hour)
-        user.resetToken = hashedToken;
-        user.resetTokenExpiry = Date.now() + 3600000; // 1 hour
+        // Store only the hashed code for 10 minutes
+        user.resetToken = hashedCode;
+        user.resetTokenExpiry = Date.now() + 600000;
         await user.save();
 
         // Send password reset email
         try {
-            await sendPasswordResetEmail(user.email, resetToken, user.name);
+            await sendPasswordResetEmail(user.email, verificationCode, user.name);
             
             res.json({ 
                 success: true, 
@@ -172,13 +182,16 @@ const requestPasswordReset = async (req, res) => {
             console.error('Error message:', emailError.message);
             console.error('Error stack:', emailError.stack);
             console.error('Full error object:', JSON.stringify(emailError, null, 2));
+
+            // Do not leave an active reset code behind when no email was sent.
+            user.resetToken = null;
+            user.resetTokenExpiry = null;
+            await user.save();
             
-            // Still return the token if email fails (for development/testing)
+            // Never expose the verification code or reset token
             res.json({ 
-                success: true, 
-                message: 'Password reset token generated (email service unavailable)',
-                resetToken, // Only for development - remove in production
-                email: user.email
+                success: false,
+                message: 'Unable to send the verification code. Please try again.'
             });
         }
 
@@ -203,7 +216,10 @@ const resetPassword = async (req, res) => {
             return res.json({ success: false, message: 'Password must be at least 8 characters' });
         }
 
-        // Hash the provided token
+        // Hash the submitted 6-digit code
+        if (!/^\d{6}$/.test(resetToken)) {
+            return res.json({ success: false, message: 'Verification code must be 6 digits' });
+        }
         const hashedToken = crypto.createHash('sha256').update(resetToken).digest('hex');
 
         // Find user with valid token
@@ -276,6 +292,24 @@ const getUserStats = async (req, res) => {
     }
 };
 
+const uploadProfilePicture = async (req, res) => {
+   try {
+       if (!req.file) {
+           return res.json({ success: false, message: 'Profile picture is required' });
+       }
+       const result = await new Promise((resolve, reject) => {
+           const stream = cloudinary.uploader.upload_stream(
+               { folder: 'loomora/avatars', resource_type: 'image' },
+               (error, upload) => error ? reject(error) : resolve(upload)
+           );
+           stream.end(req.file.buffer);
+       });
+       res.json({ success: true, url: result.secure_url });
+   } catch (error) {
+       res.json({ success: false, message: error.message });
+   }
+};
+
 module.exports = { 
     loginUser, 
     registerUser, 
@@ -283,5 +317,6 @@ module.exports = {
     requestPasswordReset, 
     resetPassword,
     getAllUsers,
-    getUserStats
+    getUserStats,
+    uploadProfilePicture
 };
