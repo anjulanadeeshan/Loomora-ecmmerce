@@ -67,7 +67,7 @@ const Orders = () => {
       } else {
         toast.error(response.message || 'Unable to refresh order status');
       }
-    } catch (error) {
+    } catch {
       toast.error('Unable to refresh order status');
     } finally {
       setTrackingLoading(false);

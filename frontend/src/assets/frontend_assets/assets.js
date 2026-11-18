@@ -57,8 +57,7 @@ import {
 } from './productImages.js'
 
 
-import hero_img from './Brand_New_Arrival.png'
-import cart_icon from './cart_icon.png'
+import hero_img from './hero-fashion.jpg'
 import bin_icon from './bin_icon.png'
 import dropdown_icon from './dropdown_icon.png'
 import exchange_icon from './exchange_icon.png'
@@ -69,16 +68,13 @@ import star_dull_icon from './star_dull_icon.png'
 import star_icon from './star_icon.png'
 import support_img from './support_img.png'
 import menu_icon from './menu_icon.png'
-import about_img from './about_img.png'
-import contact_img from './contact_img.png'
 import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
-import cross_icon from './cross_icon.png'
 import loomora_white from './loomora_white.png'
 import loomora_black from './loomora_black.png'
-import charming_lady from './charming-lady-fashionable-blouse-trousers-takes-notes-tablet-girl-posing-background-dresses.jpg'
-import couple_img from './portrait-smiling-beautiful-girl-her-handsome-boyfriend-laughing-happy-cheerful-couple-sunglasses.jpg'
-import contact_hero from './cloths.jpg'
+import charming_lady from './about-fashion.jpg'
+import couple_img from './story-couple.jpg'
+import contact_hero from './contact-fashion.jpg'
 import collection_banner from './b1.jpg'
 import newsletter_banner from './b16.jpg'
 import feedback_avatar_1 from './people/1.png'
@@ -89,7 +85,6 @@ export const assets = {
     loomora_black,
     loomora_logo: loomora_black,
     hero_img,
-    cart_icon,
     dropdown_icon,
     exchange_icon,
     profile_icon,
@@ -100,11 +95,8 @@ export const assets = {
     bin_icon,
     support_img,
     menu_icon,
-    about_img,
-    contact_img,
     razorpay_logo,
     stripe_logo,
-    cross_icon,
     charming_lady,
     couple_img,
     contact_hero,

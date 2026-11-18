@@ -11,7 +11,7 @@ const AdminFeedback = () => {
     try {
       const response = await api.get('/api/feedback/list');
       if (response.data.success) setFeedback(response.data.feedback);
-    } catch (error) {
+    } catch {
       toast.error('Failed to load feedback');
     } finally {
       setLoading(false);

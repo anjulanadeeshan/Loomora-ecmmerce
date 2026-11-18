@@ -40,7 +40,7 @@ const Hero = () => {
           <div className='max-w-3xl'>
             <button
               type='button'
-              onClick={() => handleEditHighlight(highlight)}
+              onClick={() => handleEditHighlight('New arrivals')}
               className='group mb-7 inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/90 transition hover:text-white'
             >
               <span>The 2026 edit</span>
@@ -81,7 +81,7 @@ const Hero = () => {
                 <button
                   key={highlight}
                   type='button'
-                  onClick={() => navigate('/collection')}
+                  onClick={() => handleEditHighlight(highlight)}
                   className='group flex items-center gap-4 text-left text-2xl font-semibold tracking-[-0.035em] text-white/35 transition hover:text-white focus-visible:text-white focus-visible:outline-none xl:text-[1.75rem]'
                 >
                   <span className='text-sm text-[#ff4f8b] opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100' aria-hidden='true'>▶</span>
