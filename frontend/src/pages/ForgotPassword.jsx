@@ -37,12 +37,13 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className='px-4 sm:px-[5vw] md:px-[7vh] lg:px-[9vh] flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800'>
+    <main className='page-shell page-pad page-enter flex min-h-[78vh] items-center justify-center'>
+    <div className='surface-card flex w-full max-w-md flex-col items-center gap-4 p-7 text-[#1d1a17] sm:p-10'>
       
       {/* Title Section */}
-      <div className='inline-flex items-center gap-2 mb-2 mt-10'>
-        <p className='prata-regular text-3xl'>Forgot Password</p>
-        <hr className='border-none h-[1.5px] w-8 bg-gray-800' />
+      <div className='mb-2 text-center'>
+        <p className='eyebrow mb-3'>Account recovery</p>
+        <h1 className='display-font text-4xl'>Forgot Password</h1>
       </div>
 
       <p className='text-sm text-gray-600 text-center mb-4'>
@@ -52,7 +53,7 @@ const ForgotPassword = () => {
       <form onSubmit={handleSubmit} className='w-full flex flex-col gap-4'>
         <input
           type="email"
-          className='w-full px-3 py-2 border border-gray-800'
+          className='w-full rounded-xl border px-4 py-3'
           placeholder='Email Address'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -61,7 +62,7 @@ const ForgotPassword = () => {
 
         <button
           type='submit'
-          className='bg-black text-white font-light px-8 py-2 mt-4 disabled:bg-gray-400 disabled:cursor-not-allowed'
+          className='fashion-button mt-3 w-full disabled:cursor-not-allowed disabled:opacity-50'
           disabled={loading}
         >
           {loading ? 'Sending...' : 'Send Reset Link'}
@@ -90,6 +91,7 @@ const ForgotPassword = () => {
         </p>
       </div>
     </div>
+    </main>
   );
 };
 

@@ -7,9 +7,9 @@ import NewsLetter from '../components/NewsLetter'
 
 const Home = () => {
   return (
-    <div>
+    <div className='page-enter'>
       <Hero/>
-      <div className='px-4 sm:px-[5vw] md:px-[7vh] lg:px-[9vh]'>
+      <div className='page-shell'>
         <LatestCollection/>
         <BestSeller/>
         <OurPolicy/>

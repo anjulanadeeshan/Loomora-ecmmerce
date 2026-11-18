@@ -26,7 +26,7 @@ Update your `.env` file with the credentials:
 BREVO_SMTP_USER=your_brevo_login_email@example.com
 BREVO_SMTP_PASSWORD=xsmtpsib-your-actual-smtp-key-here
 EMAIL_FROM_ADDRESS=noreply@yourdomain.com
-EMAIL_FROM_NAME=Forever E-Commerce
+EMAIL_FROM_NAME=Loomora
 FRONTEND_URL=http://localhost:5173
 ```
 

@@ -3,103 +3,45 @@ import { assets } from '../assets/frontend_assets/assets'
 
 const OurPolicy = () => {
   return (
-    <div className='py-24 bg-gradient-to-b from-white via-gray-50 to-white'>
-      <div className='max-w-7xl mx-auto'>
-        {/* Section Header */}
-        <div className='text-center mb-16'>
-          <div className='inline-block mb-4'>
-            <span className='bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent text-sm font-bold tracking-[0.3em] uppercase'>Why Choose Us</span>
-          </div>
-          <h2 className='text-4xl md:text-5xl font-bold text-gray-900 mb-4'>Experience Excellence</h2>
-          <div className='w-24 h-1 bg-gradient-to-r from-gray-900 via-gray-600 to-gray-900 mx-auto rounded-full'></div>
-        </div>
-
-        {/* Policy Cards */}
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 relative'>
-          {/* Decorative Background Elements */}
-          <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl opacity-30 pointer-events-none'>
-            <div className='absolute top-0 left-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse'></div>
-            <div className='absolute bottom-0 right-0 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse' style={{animationDelay: '1s'}}></div>
-          </div>
-
-          {/* Effortless Exchange */}
-          <div className='group relative bg-white rounded-3xl p-10 text-center border-2 border-gray-100 hover:border-gray-900 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 overflow-hidden'>
-            <div className='absolute inset-0 bg-gradient-to-br from-gray-900/0 to-gray-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
-            <div className='relative z-10'>
-              <div className='relative inline-block mb-8'>
-                <div className='absolute inset-0 bg-gray-900/10 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500'></div>
-                <div className='relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 w-24 h-24 rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500'>
-                  <img src={assets.exchange_icon} alt="Exchange" className='w-12 h-12 brightness-0 invert'/>
-                </div>
-              </div>
-              <h3 className='text-2xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors'>Effortless Exchange</h3>
-              <p className='text-gray-600 leading-relaxed mb-4'>Simple returns and exchanges within 30 days</p>
-              <div className='w-16 h-1 bg-gradient-to-r from-gray-300 to-gray-900 mx-auto rounded-full group-hover:w-24 transition-all duration-500'></div>
-            </div>
-          </div>
-
-          {/* Premium Quality - Featured Card */}
-          <div className='group relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl p-10 text-center shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 overflow-hidden md:scale-105'>
-            {/* Animated background gradient */}
-            <div className='absolute inset-0 bg-gradient-to-br from-purple-600/20 via-transparent to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
-            {/* Shine effect */}
-            <div className='absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000'>
-              <div className='absolute top-0 -left-full h-full w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 group-hover:left-full transition-all duration-1000'></div>
-            </div>
-            <div className='relative z-10'>
-              <div className='relative inline-block mb-8'>
-                <div className='absolute inset-0 bg-white/20 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500'></div>
-                <div className='relative bg-white w-24 h-24 rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500'>
-                  <img src={assets.quality_icon} alt="Quality" className='w-12 h-12'/>
-                </div>
-              </div>
-              <div className='inline-block mb-3'>
-                <span className='bg-white/20 text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-wider'>FEATURED</span>
-              </div>
-              <h3 className='text-2xl font-bold text-white mb-4'>Premium Quality</h3>
-              <p className='text-gray-200 leading-relaxed mb-4'>Curated collections with verified authenticity</p>
-              <div className='w-16 h-1 bg-gradient-to-r from-white/50 to-white mx-auto rounded-full group-hover:w-24 transition-all duration-500'></div>
-            </div>
-          </div>
-
-          {/* 24/7 Support */}
-          <div className='group relative bg-white rounded-3xl p-10 text-center border-2 border-gray-100 hover:border-gray-900 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 overflow-hidden'>
-            <div className='absolute inset-0 bg-gradient-to-br from-gray-900/0 to-gray-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
-            <div className='relative z-10'>
-              <div className='relative inline-block mb-8'>
-                <div className='absolute inset-0 bg-gray-900/10 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500'></div>
-                <div className='relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 w-24 h-24 rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500'>
-                  <img src={assets.support_img} alt="Support" className='w-12 h-12 brightness-0 invert'/>
-                </div>
-              </div>
-              <h3 className='text-2xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors'>24/7 Support</h3>
-              <p className='text-gray-600 leading-relaxed mb-4'>Dedicated style experts always ready to help</p>
-              <div className='w-16 h-1 bg-gradient-to-r from-gray-300 to-gray-900 mx-auto rounded-full group-hover:w-24 transition-all duration-500'></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Stats Section */}
-        <div className='mt-20 grid grid-cols-2 md:grid-cols-4 gap-8'>
-          <div className='text-center'>
-            <div className='text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-2'>50K+</div>
-            <div className='text-gray-600 font-medium'>Happy Customers</div>
-          </div>
-          <div className='text-center'>
-            <div className='text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-2'>99%</div>
-            <div className='text-gray-600 font-medium'>Satisfaction Rate</div>
-          </div>
-          <div className='text-center'>
-            <div className='text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-2'>24/7</div>
-            <div className='text-gray-600 font-medium'>Support Available</div>
-          </div>
-          <div className='text-center'>
-            <div className='text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-2'>500+</div>
-            <div className='text-gray-600 font-medium'>Premium Brands</div>
-          </div>
-        </div>
+    <section className='section-space'>
+      <div className='mb-12 max-w-2xl'>
+        <p className='eyebrow mb-4'>The Loomora promise</p>
+        <h2 className='editorial-title text-[#1d1a17]'>Beautifully simple, from click to closet.</h2>
       </div>
-    </div>
+
+      <div className='grid gap-5 md:grid-cols-3'>
+        {[
+          { icon: assets.exchange_icon, number: '01', title: 'Easy exchanges', copy: 'A considered fit should feel effortless. Exchange eligible pieces within 30 days.' },
+          { icon: assets.quality_icon, number: '02', title: 'Curated quality', copy: 'Every Loomora piece is selected for its fabrication, finish and lasting appeal.' },
+          { icon: assets.support_img, number: '03', title: 'Personal support', copy: 'Our style team is here whenever you need sizing, styling or order guidance.' }
+        ].map((item) => (
+          <article key={item.title} className='surface-card group p-7 transition duration-300 hover:-translate-y-1 hover:border-[#b4935f] sm:p-9'>
+            <div className='flex items-center justify-between'>
+              <span className='grid h-12 w-12 place-items-center rounded-full bg-[#f1ebe2]'>
+                <img src={item.icon} alt="" className='h-6 w-6 object-contain' />
+              </span>
+              <span className='display-font text-2xl text-[#b4935f]'>{item.number}</span>
+            </div>
+            <h3 className='display-font mt-10 text-3xl'>{item.title}</h3>
+            <p className='mt-4 text-sm leading-7 text-[#746d65]'>{item.copy}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className='mt-12 grid grid-cols-2 border-y border-[#ded7cc] py-8 md:grid-cols-4'>
+        {[
+          ['50K+', 'Happy customers'],
+          ['99%', 'Satisfaction'],
+          ['24/7', 'Style support'],
+          ['500+', 'Curated labels']
+        ].map(([value, label]) => (
+          <div key={label} className='border-[#ded7cc] px-4 py-4 text-center md:border-r md:last:border-r-0'>
+            <p className='display-font text-4xl text-[#7d263d]'>{value}</p>
+            <p className='mt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#746d65]'>{label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
   )
 }
 

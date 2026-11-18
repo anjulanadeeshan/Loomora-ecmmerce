@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { ShopContext } from '../context/ShopContext'
+import ShopContext from '../context/ShopContext.js'
 import { assets } from '../assets/frontend_assets/assets';
 import CartTotal from '../components/CartTotal';
 import { useNavigate } from 'react-router-dom';
@@ -29,13 +29,11 @@ const Cart = () => {
   }, [cartItems, products])
 
   return (
-    <div className='px-4 sm:px-[5vw] md:px-[7vh] lg:px-[9vh] border-t pt-14'>
+    <main className='page-shell page-pad page-enter'>
 
-      <div className='text-2xl mb-3'>
-        <div className='inline-flex items-center gap-2 mb-3'>
-            <p className='text-gray-500'>YOUR <span className='text-gray-700 font-medium'>CART</span></p>
-            <p className='w-8 sm:w-12 h-[1px] sm:h-[2px] bg-gray-700'></p>
-        </div>
+      <div className='mb-10'>
+        <p className='eyebrow'>Your selection</p>
+        <h1 className='editorial-title mt-3'>Shopping bag</h1>
       </div>
 
       <div>
@@ -44,18 +42,18 @@ const Cart = () => {
             const productData = products.find((product) => product._id === item._id);
 
             return (
-              <div key={index} className='py-4 border-t border-b text-gray-700 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4'>
+              <div key={index} className='mb-4 grid grid-cols-[4fr_0.5fr_0.5fr] items-center gap-4 rounded-2xl border border-[#ded7cc] bg-[#fffdf9] p-4 text-[#4f4943] sm:grid-cols-[4fr_2fr_0.5fr]'>
                 
                 {/* Product Image & Details */}
                 <div className='flex items-start gap-4 sm:gap-6'>
-                  <img className='w-16 sm:w-20' src={productData.image[0]} alt="" />
+                  <img className='h-24 w-20 rounded-xl object-cover sm:h-28 sm:w-24' src={productData.image[0]} alt={productData.name} />
                   <div>
                     {/* Name: Smaller font on mobile */}
                     <p className='text-xs sm:text-lg font-medium'>{productData.name}</p>
                     <div className='flex items-center gap-3 sm:gap-5 mt-2'>
                       <p className='text-sm sm:text-base'>{currency}{productData.price}</p>
                       {/* Size Badge: Compact on mobile */}
-                      <p className='px-2 sm:px-3 sm:py-1 border bg-slate-50 text-xs sm:text-base'>{item.size}</p>
+                      <p className='rounded-full border border-[#ded7cc] bg-[#f8f5ef] px-3 py-1 text-xs'>{item.size}</p>
                     </div>
                   </div>
                 </div>
@@ -63,7 +61,7 @@ const Cart = () => {
                 {/* Quantity Input: Smaller width on mobile */}
                 <input 
                     onChange={(e)=> e.target.value === '' || e.target.value === '0' ? null : updateQuantity(item._id, item.size, Number(e.target.value))} 
-                    className='border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1 text-center' 
+                    className='max-w-12 rounded-full border px-2 py-2 text-center sm:max-w-20'
                     type="number" 
                     min={1} 
                     defaultValue={item.quantity} 
@@ -83,14 +81,14 @@ const Cart = () => {
       </div>
 
       {/* Cart Totals Section */}
-      <div className='flex justify-end my-20'>
+      <div className='my-16 flex justify-end'>
         {/* Full width on mobile, fixed width on Desktop */}
         <div className='w-full sm:w-[450px]'>
             <CartTotal />
             <div className='w-full text-end'>
                 <button 
                   onClick={()=>navigate('/place-order')} 
-                  className='bg-black text-white text-sm my-8 px-8 py-3 active:bg-gray-700 w-full sm:w-auto hover:bg-gray-800 transition-colors'
+                  className='fashion-button my-8 w-full sm:w-auto'
                 >
                     PROCEED TO CHECKOUT
                 </button>
@@ -98,7 +96,7 @@ const Cart = () => {
         </div>
       </div>
 
-    </div>
+    </main>
   )
 }
 

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { ShopContext } from '../context/ShopContext'
+import ShopContext from '../context/ShopContext.js'
 import { assets } from '../assets/frontend_assets/assets';
 import { useLocation } from 'react-router-dom';
 
@@ -19,20 +19,20 @@ const SearchBar = () => {
     }, [location])
 
     return showSearch && visible ? (
-        <div className='border-t border-b bg-gray-50 text-center mt-20 sm:mt-24 z-40 relative shadow-md transition-all duration-300'>
-            <div className='inline-flex items-center justify-center border border-gray-400 px-5 py-2 my-5 mx-3 rounded-full w-3/4 sm:w-1/2'>
+        <div className='relative z-40 mt-[76px] border-b border-[#ded7cc] bg-[#eee7dc]/95 py-5 text-center shadow-[0_12px_30px_rgba(42,34,29,0.06)] backdrop-blur transition-all duration-300'>
+            <div className='inline-flex w-3/4 items-center justify-center rounded-full border border-[#cfc5b7] bg-[#fffdf9] px-6 py-3 sm:w-1/2'>
                 <input
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     className='flex-1 outline-none bg-inherit text-sm'
                     type="text"
-                    placeholder='Search'
+                    placeholder='Search the collection'
                 />
                 <img className='w-4' src={assets.search_icon} alt="Search" />
             </div>
             <img
                 onClick={() => setShowSearch(false)}
-                className='inline w-3 cursor-pointer'
+                className='ml-4 inline w-3 cursor-pointer'
                 src={assets.cross_icon}
                 alt="Close"
             />

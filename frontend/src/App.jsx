@@ -20,7 +20,7 @@ import AdminProtectedRoute from "./components/AdminProtectedRoute";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import SearchBar from "./components/SearchBar";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 
 const App = () => {
@@ -28,7 +28,7 @@ const App = () => {
   const isAdminRoute = location.pathname.startsWith('/admin');
 
   return (
-    <div className={isAdminRoute ? '' : ''}>
+    <div className={isAdminRoute ? 'admin-app' : 'storefront-app'}>
       <ToastContainer />
       {!isAdminRoute && <NavBar />}
       {!isAdminRoute && <SearchBar />}

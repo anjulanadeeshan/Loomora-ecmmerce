@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { ShopContext } from '../context/ShopContext'
+import ShopContext from '../context/ShopContext.js'
 import { loginUser, registerUser, adminLogin } from '../services/userService'
 import { toast } from 'react-toastify'
 
@@ -82,13 +82,13 @@ const Login = () => {
   }
 
   return (
-    <div className="px-4 sm:px-[5vw] md:px-[7vh] lg:px-[9vh]">
-      <form onSubmit={onSubmitHandler} className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800'>
+    <main className="page-shell page-pad page-enter flex min-h-[78vh] items-center justify-center">
+      <form onSubmit={onSubmitHandler} className='surface-card flex w-full max-w-md flex-col items-center gap-4 p-7 text-[#1d1a17] sm:p-10'>
         
         {/* Title Section */}
-        <div className='inline-flex items-center gap-2 mb-2 mt-10'>
-            <p className='prata-regular text-3xl'>{isAdminLogin ? 'Admin Login' : currentState}</p>
-            <hr className='border-none h-[1.5px] w-8 bg-gray-800' />
+        <div className='mb-4 text-center'>
+            <p className='eyebrow mb-3'>Welcome to Loomora</p>
+            <h1 className='display-font text-4xl'>{isAdminLogin ? 'Admin Login' : currentState}</h1>
         </div>
 
         {/* Admin Login Toggle - Only visible during Login */}
@@ -112,7 +112,7 @@ const Login = () => {
           <input 
             type="text" 
             name="name"
-            className='w-full px-3 py-2 border border-gray-800' 
+            className='w-full rounded-xl border px-4 py-3'
             placeholder='Name' 
             value={formData.name}
             onChange={handleChange}
@@ -124,7 +124,7 @@ const Login = () => {
         <input 
           type="email" 
           name="email"
-          className='w-full px-3 py-2 border border-gray-800' 
+          className='w-full rounded-xl border px-4 py-3'
           placeholder='Email' 
           value={formData.email}
           onChange={handleChange}
@@ -133,7 +133,7 @@ const Login = () => {
         <input 
           type="password" 
           name="password"
-          className='w-full px-3 py-2 border border-gray-800' 
+          className='w-full rounded-xl border px-4 py-3'
           placeholder='Password' 
           value={formData.password}
           onChange={handleChange}
@@ -162,14 +162,14 @@ const Login = () => {
 
         {/* Submit Button */}
         <button 
-          className='bg-black text-white font-light px-8 py-2 mt-4 disabled:bg-gray-400 disabled:cursor-not-allowed'
+          className='fashion-button mt-3 w-full disabled:cursor-not-allowed disabled:opacity-50'
           disabled={loading}
         >
             {loading ? 'Please wait...' : (isAdminLogin ? 'Admin Sign In' : (currentState === 'Login' ? 'Sign In' : 'Sign Up'))}
         </button>
 
       </form>
-    </div>
+    </main>
   )
 }
 

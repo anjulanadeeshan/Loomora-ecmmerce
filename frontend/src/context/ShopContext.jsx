@@ -1,11 +1,10 @@
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { getCurrentUser, saveAuthData, clearAuthData } from "../services/userService";
 import api from "../config/api";
 import { products as staticProducts } from "../assets/frontend_assets/assets";
-
-export const ShopContext = createContext();
+import ShopContext from "./ShopContext.js";
 
 const ShopContextProvider = (props) => {
   const currency = "$";
@@ -43,7 +42,7 @@ const ShopContextProvider = (props) => {
         setProducts(staticProducts);
       }
     } catch (error) {
-      console.log('Backend not available, using static products');
+      console.warn('Backend not available, using static products:', error.message);
       // Use static products when backend is not available
       setProducts(staticProducts);
     }
@@ -123,15 +122,20 @@ const ShopContextProvider = (props) => {
   // --- ADD THIS FUNCTION (To calculate total price) ---
   const getCartAmount = () => {
     let totalAmount = 0;
-    for(const items in cartItems){
-        let itemInfo = products.find((product)=> product._id === items);
-        for(const item in cartItems[items]){
-            try {
-                if (cartItems[items][item] > 0) {
-                    totalAmount += itemInfo.price * cartItems[items][item];
-                }
-            } catch (error) {}
+    for (const productId in cartItems) {
+      const itemInfo = products.find((product) => product._id === productId);
+
+      if (!itemInfo) {
+        console.warn(`Cart item ${productId} was not found in the product list`);
+        continue;
+      }
+
+      for (const size in cartItems[productId]) {
+        const quantity = cartItems[productId][size];
+        if (quantity > 0) {
+          totalAmount += itemInfo.price * quantity;
         }
+      }
     }
     return totalAmount;
   }

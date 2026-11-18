@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { ShopContext } from '../context/ShopContext'
+import ShopContext from '../context/ShopContext.js'
 import CartTotal from '../components/CartTotal'
 import { assets } from '../assets/frontend_assets/assets'
 import { useNavigate } from 'react-router-dom'
@@ -106,21 +106,19 @@ const PlaceOrder = () => {
   };
 
   return (
-    <div className='px-4 sm:px-[5vw] md:px-[7vh] lg:px-[9vh] flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t'>
+    <main className='page-shell page-pad page-enter flex min-h-[80vh] flex-col justify-between gap-8 lg:flex-row lg:gap-14'>
       
       {/* ------------- Left Side: Delivery Information ------------- */}
-      <div className='flex flex-col gap-4 w-full sm:max-w-[480px]'>
+      <div className='surface-card flex w-full flex-col gap-4 p-6 sm:max-w-[540px] sm:p-9'>
       
-        <div className='text-xl sm:text-2xl my-3'>
-            <div className='inline-flex items-center gap-2 mb-3'>
-                <p className='text-gray-500'>DELIVERY <span className='text-gray-700 font-medium'>INFORMATION</span></p>
-                <p className='w-8 sm:w-12 h-px sm:h-0.5 bg-gray-700'></p>
-            </div>
+        <div className='my-3'>
+          <p className='eyebrow'>Where should we send it?</p>
+          <h1 className='display-font mt-2 text-4xl'>Delivery information</h1>
         </div>
 
         <div className='flex gap-3'>
             <input 
-              className='border border-gray-300 rounded py-1.5 px-3.5 w-full' 
+              className='w-full rounded-xl border px-4 py-3'
               type="text" 
               name="firstName"
               placeholder='First name'
@@ -129,7 +127,7 @@ const PlaceOrder = () => {
               required
             />
             <input 
-              className='border border-gray-300 rounded py-1.5 px-3.5 w-full' 
+              className='w-full rounded-xl border px-4 py-3'
               type="text" 
               name="lastName"
               placeholder='Last name'
@@ -139,7 +137,7 @@ const PlaceOrder = () => {
             />
         </div>
         <input 
-          className='border border-gray-300 rounded py-1.5 px-3.5 w-full' 
+          className='w-full rounded-xl border px-4 py-3'
           type="email" 
           name="email"
           placeholder='Email address'
@@ -148,7 +146,7 @@ const PlaceOrder = () => {
           required
         />
         <input 
-          className='border border-gray-300 rounded py-1.5 px-3.5 w-full' 
+          className='w-full rounded-xl border px-4 py-3'
           type="text" 
           name="street"
           placeholder='Street'
@@ -159,7 +157,7 @@ const PlaceOrder = () => {
         
         <div className='flex gap-3'>
             <input 
-              className='border border-gray-300 rounded py-1.5 px-3.5 w-full' 
+              className='w-full rounded-xl border px-4 py-3'
               type="text" 
               name="city"
               placeholder='City'
@@ -168,7 +166,7 @@ const PlaceOrder = () => {
               required
             />
             <input 
-              className='border border-gray-300 rounded py-1.5 px-3.5 w-full' 
+              className='w-full rounded-xl border px-4 py-3'
               type="text" 
               name="state"
               placeholder='State'
@@ -179,7 +177,7 @@ const PlaceOrder = () => {
         
         <div className='flex gap-3'>
             <input 
-              className='border border-gray-300 rounded py-1.5 px-3.5 w-full' 
+              className='w-full rounded-xl border px-4 py-3'
               type="text" 
               name="zipcode"
               placeholder='Zipcode'
@@ -187,7 +185,7 @@ const PlaceOrder = () => {
               onChange={handleChange}
             />
             <input 
-              className='border border-gray-300 rounded py-1.5 px-3.5 w-full' 
+              className='w-full rounded-xl border px-4 py-3'
               type="text" 
               name="country"
               placeholder='Country'
@@ -197,7 +195,7 @@ const PlaceOrder = () => {
         </div>
         
         <input 
-          className='border border-gray-300 rounded py-1.5 px-3.5 w-full' 
+          className='w-full rounded-xl border px-4 py-3'
           type="tel" 
           name="phone"
           placeholder='Phone'
@@ -208,38 +206,36 @@ const PlaceOrder = () => {
       </div>
 
       {/* ------------- Right Side: Cart Total & Payment ------------- */}
-      <div className='mt-8'>
+      <div className='mt-8 w-full lg:max-w-[520px]'>
         
         <div className='mt-8 min-w-80'>
             <CartTotal />
         </div>
 
-        <div className='mt-12'>
-            <div className='text-xl sm:text-2xl my-3'>
-                <div className='inline-flex items-center gap-2 mb-3'>
-                    <p className='text-gray-500'>PAYMENT <span className='text-gray-700 font-medium'>METHOD</span></p>
-                    <p className='w-8 sm:w-12 h-[1px] sm:h-[2px] bg-gray-700'></p>
-                </div>
+        <div className='surface-card mt-6 p-6 sm:p-8'>
+            <div className='my-3'>
+              <p className='eyebrow'>Secure checkout</p>
+              <h2 className='display-font mt-2 text-3xl'>Payment method</h2>
             </div>
 
             {/* Payment Method Selection */}
             <div className='flex gap-3 flex-col lg:flex-row'>
                 
                 {/* Stripe */}
-                <div onClick={()=>setMethod('stripe')} className='flex items-center gap-3 border p-2 px-3 cursor-pointer'>
-                    <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'stripe' ? 'bg-green-400' : ''}`}></p>
+                <div onClick={()=>setMethod('stripe')} className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition ${method === 'stripe' ? 'border-[#7d263d] bg-[#f7edf0]' : 'border-[#ded7cc]'}`}>
+                    <p className={`h-3.5 min-w-3.5 rounded-full border ${method === 'stripe' ? 'border-[#7d263d] bg-[#7d263d]' : ''}`}></p>
                     <img className='h-5 mx-4' src={assets.stripe_logo} alt="Stripe" />
                 </div>
 
                 {/* Razorpay */}
-                <div onClick={()=>setMethod('razorpay')} className='flex items-center gap-3 border p-2 px-3 cursor-pointer'>
-                    <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'razorpay' ? 'bg-green-400' : ''}`}></p>
+                <div onClick={()=>setMethod('razorpay')} className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition ${method === 'razorpay' ? 'border-[#7d263d] bg-[#f7edf0]' : 'border-[#ded7cc]'}`}>
+                    <p className={`h-3.5 min-w-3.5 rounded-full border ${method === 'razorpay' ? 'border-[#7d263d] bg-[#7d263d]' : ''}`}></p>
                     <img className='h-5 mx-4' src={assets.razorpay_logo} alt="Razorpay" />
                 </div>
 
                 {/* Cash on Delivery */}
-                <div onClick={()=>setMethod('cod')} className='flex items-center gap-3 border p-2 px-3 cursor-pointer'>
-                    <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'cod' ? 'bg-green-400' : ''}`}></p>
+                <div onClick={()=>setMethod('cod')} className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition ${method === 'cod' ? 'border-[#7d263d] bg-[#f7edf0]' : 'border-[#ded7cc]'}`}>
+                    <p className={`h-3.5 min-w-3.5 rounded-full border ${method === 'cod' ? 'border-[#7d263d] bg-[#7d263d]' : ''}`}></p>
                     <p className='text-gray-500 text-sm font-medium mx-4'>CASH ON DELIVERY</p>
                 </div>
 
@@ -249,14 +245,14 @@ const PlaceOrder = () => {
                 <button 
                   onClick={handlePlaceOrder} 
                   disabled={loading}
-                  className='bg-black text-white px-16 py-3 text-sm active:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed'
+                  className='fashion-button w-full disabled:cursor-not-allowed disabled:opacity-50'
                 >
                     {loading ? 'PLACING ORDER...' : 'PLACE ORDER'}
                 </button>
             </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 

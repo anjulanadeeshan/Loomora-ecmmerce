@@ -38,11 +38,11 @@ const sendPasswordResetEmail = async (email, resetToken, userName) => {
 
         const sendSmtpEmail = new brevo.SendSmtpEmail();
         
-        sendSmtpEmail.subject = 'Password Reset Request - Forever E-Commerce';
+        sendSmtpEmail.subject = 'Password Reset Request - Loomora';
         sendSmtpEmail.to = [{ email: email, name: userName || 'User' }];
         sendSmtpEmail.sender = { 
-            name: process.env.EMAIL_FROM_NAME || 'Forever E-Commerce', 
-            email: process.env.EMAIL_FROM_ADDRESS || 'noreply@forever.com' 
+            name: process.env.EMAIL_FROM_NAME || 'Loomora',
+            email: process.env.EMAIL_FROM_ADDRESS || 'noreply@loomora.com'
         };
         
         sendSmtpEmail.htmlContent = `
@@ -62,7 +62,7 @@ const sendPasswordResetEmail = async (email, resetToken, userName) => {
             <body>
                 <div class="container">
                     <div class="header">
-                        <h1>Forever E-Commerce</h1>
+                        <h1>Loomora</h1>
                     </div>
                     <div class="content">
                         <h2>Password Reset Request</h2>
@@ -82,10 +82,10 @@ const sendPasswordResetEmail = async (email, resetToken, userName) => {
                             <li>If you didn't request this reset, please ignore this email</li>
                         </ul>
                         
-                        <p>Best regards,<br>Forever E-Commerce Team</p>
+                        <p>Best regards,<br>The Loomora Team</p>
                     </div>
                     <div class="footer">
-                        <p>© ${new Date().getFullYear()} Forever E-Commerce. All rights reserved.</p>
+                        <p>© ${new Date().getFullYear()} Loomora. All rights reserved.</p>
                     </div>
                 </div>
             </body>
@@ -114,7 +114,7 @@ const sendWelcomeEmail = async (email, userName) => {
         
         const sendSmtpEmail = new brevo.SendSmtpEmail();
         
-        sendSmtpEmail.subject = 'Welcome to Forever E-Commerce! 🎉';
+        sendSmtpEmail.subject = 'Welcome to Loomora! 🎉';
         sendSmtpEmail.to = [{ email: email, name: userName }];
         sendSmtpEmail.sender = { 
             name: process.env.EMAIL_FROM_NAME, 
@@ -135,10 +135,10 @@ const sendWelcomeEmail = async (email, userName) => {
             </head>
             <body>
                 <div class="container">
-                    <div class="header"><h1>Welcome to Forever!</h1></div>
+                    <div class="header"><h1>Welcome to Loomora!</h1></div>
                     <div class="content">
                         <h2>Hello ${userName}! 👋</h2>
-                        <p>Thank you for joining Forever E-Commerce!</p>
+                        <p>Thank you for joining Loomora!</p>
                         <center><a href="${process.env.FRONTEND_URL}" class="button">Start Shopping</a></center>
                     </div>
                 </div>

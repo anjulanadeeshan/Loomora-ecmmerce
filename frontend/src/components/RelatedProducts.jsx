@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { ShopContext } from "../context/ShopContext";
+import ShopContext from "../context/ShopContext.js";
 import ProductItem from "./ProductItem";
 
 const RelatedProducts = ({ category, subCategory }) => {
@@ -16,7 +16,7 @@ const RelatedProducts = ({ category, subCategory }) => {
       );
       setRelated(productCopy.slice(0, 5));
     }
-  }, [products]);
+  }, [products, category, subCategory]);
   return (
     <div className="my-24">
       <div className="text-center text-3xl py-2">

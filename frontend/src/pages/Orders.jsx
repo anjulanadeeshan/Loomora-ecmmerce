@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { ShopContext } from '../context/ShopContext'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
+import ShopContext from '../context/ShopContext.js'
 import { getUserOrders } from '../services/orderService'
 import { toast } from 'react-toastify'
 
@@ -9,13 +9,12 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    if (user) {
-      fetchOrders();
+  const fetchOrders = useCallback(async () => {
+    if (!user) {
+      setLoading(false);
+      return;
     }
-  }, [user]);
 
-  const fetchOrders = async () => {
     try {
       const response = await getUserOrders(user.id);
       if (response.success) {
@@ -27,7 +26,11 @@ const Orders = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [user]);
+
+  useEffect(() => {
+    fetchOrders();
+  }, [fetchOrders]);
 
   const getStatusColor = (status) => {
     const colors = {
@@ -42,20 +45,18 @@ const Orders = () => {
 
   if (loading) {
     return (
-      <div className='px-4 sm:px-[5vw] md:px-[7vh] lg:px-[9vh] border-t pt-16 min-h-[60vh] flex items-center justify-center'>
+      <div className='page-shell page-pad flex min-h-[60vh] items-center justify-center'>
         <p className='text-xl text-gray-600'>Loading your orders...</p>
       </div>
     );
   }
 
   return (
-    <div className='px-4 sm:px-[5vw] md:px-[7vh] lg:px-[9vh] border-t pt-16'>
+    <main className='page-shell page-pad page-enter'>
 
-        <div className='text-2xl'>
-            <div className='inline-flex items-center gap-2 mb-3'>
-                <p className='text-gray-500'>MY <span className='text-gray-700 font-medium'>ORDERS</span></p>
-                <p className='w-8 sm:w-12 h-[1px] sm:h-[2px] bg-gray-700'></p>
-            </div>
+        <div className='mb-8'>
+          <p className='eyebrow'>Your wardrobe journey</p>
+          <h1 className='editorial-title mt-3'>My orders</h1>
         </div>
 
         <div>
@@ -64,21 +65,21 @@ const Orders = () => {
                     <p className='text-gray-500 text-lg'>No orders yet</p>
                     <button 
                         onClick={() => window.location.href = '/collection'}
-                        className='mt-4 bg-black text-white px-8 py-3 text-sm'
+                        className='fashion-button mt-4'
                     >
                         Start Shopping
                     </button>
                 </div>
             ) : (
                 orders.map((order) => (
-                    <div key={order._id} className='py-4 border-t border-b text-gray-700 flex flex-col md:flex-row md:items-center md:justify-between gap-4'>
+                    <div key={order._id} className='surface-card mb-5 flex flex-col gap-5 p-5 text-[#4f4943] md:flex-row md:items-center md:justify-between sm:p-7'>
                         
                         {/* Left Side: Order Items */}
                         <div className='flex items-start gap-6 text-sm w-full md:w-1/2'>
                             <div className='flex flex-col gap-2 w-full'>
                                 {order.items.map((item, idx) => (
                                     <div key={idx} className='flex items-start gap-4'>
-                                        <img className='w-16 sm:w-20' src={item.image} alt={item.name} />
+                                        <img className='h-24 w-20 rounded-xl object-cover sm:h-28 sm:w-24' src={item.image} alt={item.name} />
                                         <div className='flex-1'>
                                             <p className='sm:text-base font-medium'>{item.name}</p>
                                             <div className='flex items-center gap-3 mt-2 text-base text-gray-700'>
@@ -106,7 +107,7 @@ const Orders = () => {
                             
                             <button 
                                 onClick={fetchOrders}
-                                className='border px-4 py-2 text-sm font-medium rounded-sm hover:bg-gray-50'
+                                className='rounded-full border border-[#1d1a17] px-5 py-2 text-xs font-semibold uppercase tracking-wider transition hover:bg-[#1d1a17] hover:text-white'
                             >
                                 Track Order
                             </button>
@@ -115,7 +116,7 @@ const Orders = () => {
                 ))
             )}
         </div>
-    </div>
+    </main>
   )
 }
 

@@ -1,8 +1,13 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import fs from 'node:fs/promises';
 import Product from './models/productModel.js';
 
 dotenv.config();
+
+const productImages = JSON.parse(
+    await fs.readFile(new URL('./data/cloudinaryProductImages.json', import.meta.url), 'utf8')
+);
 
 // Sample products data (you can expand this)
 const products = [
@@ -10,7 +15,7 @@ const products = [
         name: "Women Round Neck Cotton Top",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 100,
-        image: ["/products/p_img1.png"],
+        image: [productImages.p_img1],
         category: "Women",
         subCategory: "Topwear",
         sizes: ["S", "M", "L"],
@@ -21,7 +26,7 @@ const products = [
         name: "Men Round Neck Pure Cotton T-shirt",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 200,
-        image: ["/products/p_img2_1.png"],
+        image: [productImages.p_img2_1],
         category: "Men",
         subCategory: "Topwear",
         sizes: ["M", "L", "XL"],
@@ -32,7 +37,7 @@ const products = [
         name: "Girls Round Neck Cotton Top",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 220,
-        image: ["/products/p_img3.png"],
+        image: [productImages.p_img3],
         category: "Kids",
         subCategory: "Topwear",
         sizes: ["S", "L", "XL"],
@@ -43,7 +48,7 @@ const products = [
         name: "Men Round Neck Pure Cotton T-shirt",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 110,
-        image: ["/products/p_img4.png"],
+        image: [productImages.p_img4],
         category: "Men",
         subCategory: "Topwear",
         sizes: ["S", "M", "XXL"],
@@ -54,7 +59,7 @@ const products = [
         name: "Women Round Neck Cotton Top",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 130,
-        image: ["/products/p_img5.png"],
+        image: [productImages.p_img5],
         category: "Women",
         subCategory: "Topwear",
         sizes: ["M", "L", "XL"],
@@ -65,7 +70,7 @@ const products = [
         name: "Girls Round Neck Cotton Top",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 140,
-        image: ["/products/p_img6.png"],
+        image: [productImages.p_img6],
         category: "Kids",
         subCategory: "Topwear",
         sizes: ["S", "L", "XL"],
@@ -76,7 +81,7 @@ const products = [
         name: "Men Tapered Fit Flat-Front Trousers",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 190,
-        image: ["/products/p_img7.png"],
+        image: [productImages.p_img7],
         category: "Men",
         subCategory: "Bottomwear",
         sizes: ["S", "L", "XL"],
@@ -87,7 +92,7 @@ const products = [
         name: "Men Round Neck Pure Cotton T-shirt",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 140,
-        image: ["/products/p_img8.png"],
+        image: [productImages.p_img8],
         category: "Men",
         subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
@@ -98,7 +103,7 @@ const products = [
         name: "Girls Round Neck Cotton Top",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 100,
-        image: ["/products/p_img9.png"],
+        image: [productImages.p_img9],
         category: "Kids",
         subCategory: "Topwear",
         sizes: ["M", "L", "XL"],
@@ -109,7 +114,7 @@ const products = [
         name: "Men Tapered Fit Flat-Front Trousers",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 110,
-        image: ["/products/p_img10.png"],
+        image: [productImages.p_img10],
         category: "Men",
         subCategory: "Bottomwear",
         sizes: ["S", "L", "XL"],

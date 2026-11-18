@@ -1,6 +1,6 @@
-# Forever E-Commerce Backend
+# Loomora E-Commerce Backend
 
-Backend server for the Forever E-Commerce application built with Node.js, Express, and MongoDB.
+Backend server for the Loomora e-commerce application built with Node.js, Express, and MongoDB.
 
 ## 🚀 Quick Start
 
@@ -27,7 +27,7 @@ Backend server for the Forever E-Commerce application built with Node.js, Expres
      ```
      MONGODB_URI=your_mongodb_connection_string
      JWT_SECRET=your_secret_key
-     ADMIN_EMAIL=admin@forever.com
+     ADMIN_EMAIL=admin@loomora.com
      ADMIN_PASSWORD=your_admin_password
      ```
 
@@ -105,7 +105,7 @@ POST /api/user/admin
 Content-Type: application/json
 
 {
-  "email": "admin@forever.com",
+  "email": "admin@loomora.com",
   "password": "Admin@123456"
 }
 ```
@@ -245,9 +245,9 @@ Content-Type: application/json
 | Variable | Description | Example |
 |----------|-------------|---------|
 | `PORT` | Server port number | 4000 |
-| `MONGODB_URI` | MongoDB connection string | mongodb://localhost:27017/forever_ecommerce |
+| `MONGODB_URI` | MongoDB connection string | mongodb://localhost:27017/loomora_ecommerce |
 | `JWT_SECRET` | Secret key for JWT signing | your_secret_key |
-| `ADMIN_EMAIL` | Admin login email | admin@forever.com |
+| `ADMIN_EMAIL` | Admin login email | admin@loomora.com |
 | `ADMIN_PASSWORD` | Admin login password | Admin@123456 |
 
 ---
@@ -285,7 +285,7 @@ npm run dev
 2. Get your connection string
 3. Update `MONGODB_URI` in `.env`:
    ```
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/forever_ecommerce
+   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/loomora_ecommerce
    ```
 
 ---

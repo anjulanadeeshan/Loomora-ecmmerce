@@ -43,10 +43,11 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="flex min-h-screen items-center justify-center bg-[#eee7dc] px-4 py-12 sm:px-6 lg:px-8">
+      <div className="surface-card w-full max-w-md space-y-8 p-8 sm:p-10">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
+          <p className="eyebrow text-center">Loomora studio</p>
+          <h2 className="display-font mt-3 text-center text-4xl text-[#1d1a17]">
             Admin Login
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
@@ -67,7 +68,7 @@ const AdminLogin = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-black focus:border-black focus:z-10 sm:text-sm"
+                className="relative block w-full rounded-xl border px-4 py-3 text-sm text-[#1d1a17] placeholder-[#8c847b]"
                 placeholder="Admin email"
               />
             </div>
@@ -83,7 +84,7 @@ const AdminLogin = () => {
                 required
                 value={formData.password}
                 onChange={handleChange}
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-black focus:border-black focus:z-10 sm:text-sm"
+                className="relative mt-3 block w-full rounded-xl border px-4 py-3 text-sm text-[#1d1a17] placeholder-[#8c847b]"
                 placeholder="Password"
               />
             </div>
@@ -105,7 +106,7 @@ const AdminLogin = () => {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black disabled:bg-gray-400 disabled:cursor-not-allowed"
+              className="fashion-button group relative w-full disabled:cursor-not-allowed disabled:opacity-50"
             >
               <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                 <svg

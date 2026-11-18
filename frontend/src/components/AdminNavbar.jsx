@@ -23,20 +23,19 @@ const AdminNavbar = () => {
   ];
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-5 px-4 sm:px-[5vw] md:px-[7vh] lg:px-[9vh] font-medium bg-white/80 backdrop-blur-sm border-b border-gray-200">
+    <div className="fixed inset-x-0 top-0 z-50 flex h-[76px] items-center justify-between border-b border-[#ded7cc] bg-[#fffdf9]/90 px-4 font-medium backdrop-blur-xl sm:px-[5vw] md:px-[7vh] lg:px-[9vh]">
       <Link to='/admin/dashboard'>
-        <img src={assets.newlogo} className="w-36" alt="Fashion_X" />
+        <img src={assets.loomora_logo} className="h-14 w-32 object-contain" alt="Loomora" />
       </Link>
       
-      <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
+      <ul className="hidden items-center gap-2 rounded-full border border-[#ded7cc] bg-white/70 p-1 text-xs text-[#4f4943] sm:flex">
         {navItems.map((item) => (
           <Link
             key={item.path}
             to={item.path}
-            className="flex flex-col items-center gap-1"
+            className={`rounded-full px-4 py-2 transition ${location.pathname === item.path ? 'bg-[#7d263d] text-white' : 'hover:bg-[#eee7dc]'}`}
           >
             <p className={location.pathname === item.path ? 'font-semibold' : ''}>{item.label}</p>
-            <hr className={`w-2/4 border-none h-[1.5px] bg-gray-700 ${location.pathname === item.path ? '' : 'hidden'}`} />
           </Link>
         ))}
       </ul>
@@ -54,7 +53,7 @@ const AdminNavbar = () => {
         
         <button
           onClick={handleLogout}
-          className="bg-black text-white px-5 py-2 rounded text-sm hover:bg-gray-800 transition-all duration-300"
+          className="rounded-full bg-[#1d1a17] px-5 py-2 text-xs font-semibold uppercase tracking-wider text-white transition hover:bg-[#7d263d]"
         >
           Logout
         </button>

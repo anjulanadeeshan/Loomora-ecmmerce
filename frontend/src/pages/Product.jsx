@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ShopContext } from "../context/ShopContext";
+import ShopContext from "../context/ShopContext.js";
 import { assets } from "../assets/frontend_assets/assets";
 import RelatedProducts from "../components/RelatedProducts";
 
@@ -11,73 +11,73 @@ const Product = () => {
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
 
-  const fetchProductData = async () => {
-    products.map((item) => {
-      if (item._id === productId) {
-        setProductData(item);
-        setImage(item.image[0]);
-        return null;
-      }
-    });
-  };
+  const fetchProductData = useCallback(() => {
+    const product = products.find((item) => item._id === productId);
+
+    if (product) {
+      setProductData(product);
+      setImage(product.image[0]);
+    }
+  }, [productId, products]);
 
   useEffect(() => {
     fetchProductData();
     window.scrollTo(0, 0);
-  }, [productId, products]);
+  }, [fetchProductData]);
 
   return productData ? (
-    <div className="px-4 sm:px-[5vw] md:px-[7vh] lg:px-[9vh] border-t-2 pt-10 mt-24 transition-opacity ease-in duration-500 opacity-100">
+    <main className="page-shell page-pad page-enter">
       {/*----------- Product Data -----------------*/}
-      <div className="flex gap-12 sm:gap-12 flex-col sm:flex-row">
+      <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
         {/*---------- Product Images (Left Side) ----------*/}
-        <div className="flex-1 flex flex-col-reverse gap-3 sm:flex-row">
+        <div className="flex flex-col-reverse gap-4 sm:flex-row">
           {/* Thumbnails List */}
-          <div className="flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full">
+          <div className="flex w-full gap-3 overflow-x-auto sm:w-24 sm:flex-col sm:overflow-y-auto">
             {productData.image.map((item, index) => (
               <img
                 onClick={() => setImage(item)}
                 src={item}
                 key={index}
-                className="w-[24%] sm:w-full sm:mb-3 shrink-0 cursor-pointer border hover:border-gray-400 transition-all"
+                className={`aspect-[3/4] w-[24%] shrink-0 cursor-pointer rounded-xl border object-cover transition sm:w-full ${image === item ? 'border-[#7d263d] ring-2 ring-[#7d263d]/10' : 'border-[#ded7cc] hover:border-[#b4935f]'}`}
                 alt="Thumbnail"
               />
             ))}
           </div>
           {/* Main Image */}
-          <div className="w-full sm:w-[80%]">
-            <img className="w-full h-auto" src={image} alt="Main Product" />
+          <div className="w-full overflow-hidden rounded-[2rem] bg-[#ede8df] sm:flex-1">
+            <img className="aspect-[3/4] h-full w-full object-cover" src={image} alt={productData.name} />
           </div>
         </div>
 
         {/*---------- Product Info (Right Side) ----------*/}
-        <div className="flex-1">
-          <h1 className="font-medium text-2xl mt-2">{productData.name}</h1>
+        <div className="self-center lg:sticky lg:top-28">
+          <p className="eyebrow">Loomora selection</p>
+          <h1 className="display-font mt-4 text-4xl leading-tight sm:text-5xl">{productData.name}</h1>
 
           {/* Star Ratings (Static for now) */}
-          <div className="flex items-center gap-1 mt-2">
+          <div className="mt-4 flex items-center gap-1">
             <img src={assets.star_icon} alt="" className="w-3.5" />
             <img src={assets.star_icon} alt="" className="w-3.5" />
             <img src={assets.star_icon} alt="" className="w-3.5" />
             <img src={assets.star_icon} alt="" className="w-3.5" />
             <img src={assets.star_dull_icon} alt="" className="w-3.5" />
-            <p className="pl-2">(122)</p>
+            <p className="pl-2 text-xs text-[#746d65]">122 reviews</p>
           </div>
 
-          <p className="mt-5 text-3xl font-medium">{currency}{productData.price}</p>
-          <p className="mt-5 text-gray-500 md:w-4/5">
+          <p className="mt-7 text-2xl font-semibold">{currency}{productData.price}</p>
+          <p className="mt-5 max-w-xl text-sm leading-7 text-[#746d65]">
             {productData.description}
           </p>
 
           {/* Size Selector */}
-          <div className="flex flex-col gap-4 my-8">
-            <p>Select Size</p>
-            <div className="flex gap-2">
+          <div className="my-8 flex flex-col gap-4 border-y border-[#ded7cc] py-7">
+            <p className="text-xs font-bold uppercase tracking-[0.14em]">Select size</p>
+            <div className="flex flex-wrap gap-2">
               {productData.sizes.map((item, index) => (
                 <button
                   onClick={() => setSize(item)}
-                  className={`border py-2 px-4 bg-gray-100 ${
-                    item === size ? "border-orange-500" : ""
+                  className={`grid h-11 min-w-12 place-items-center rounded-full border px-4 text-sm transition ${
+                    item === size ? "border-[#7d263d] bg-[#7d263d] text-white" : "border-[#ded7cc] bg-[#fffdf9] hover:border-[#7d263d]"
                   }`}
                   key={index}
                 >
@@ -88,13 +88,12 @@ const Product = () => {
           </div>
 
           {/* Add to Cart Button */}
-          <button onClick={()=>addToCart(productData._id, size)} className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700">
+          <button onClick={()=>addToCart(productData._id, size)} className="fashion-button w-full sm:w-auto">
             ADD TO CART
           </button>
 
           {/* Additional Product Policies */}
-          <hr className="mt-8 sm:w-4/5" />
-          <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
+          <div className="mt-7 flex flex-col gap-2 text-xs text-[#746d65]">
             <p>100% Original product.</p>
             <p>Cash on delivery is available on this product.</p>
             <p>Easy return and exchange policy within 7 days.</p>
@@ -103,12 +102,12 @@ const Product = () => {
       </div>
 
       {/* ---------- Description & Reviews Section (Bottom) ---------- */}
-      <div className="mt-20">
-        <div className="flex">
-          <b className="border px-5 py-3 text-sm">Description</b>
-          <p className="border px-5 py-3 text-sm">Reviews (122)</p>
+      <div className="mt-20 overflow-hidden rounded-[1.5rem] border border-[#ded7cc] bg-[#fffdf9]">
+        <div className="flex border-b border-[#ded7cc]">
+          <b className="border-r border-[#ded7cc] px-6 py-4 text-xs uppercase tracking-wider text-[#7d263d]">Description</b>
+          <p className="px-6 py-4 text-xs uppercase tracking-wider text-[#746d65]">Reviews (122)</p>
         </div>
-        <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
+        <div className="flex max-w-4xl flex-col gap-4 px-6 py-7 text-sm leading-7 text-[#746d65]">
           <p>
             Each piece in our collection is carefully selected to meet the highest standards of quality and style. We work directly with manufacturers to ensure authentic materials, superior craftsmanship, and ethical production practices.
           </p>
@@ -122,7 +121,7 @@ const Product = () => {
         category={productData.category}
         subCategory={productData.subCategory}
       />
-    </div>
+    </main>
   ) : (
     <div className="opacity-0"></div>
   ); 
