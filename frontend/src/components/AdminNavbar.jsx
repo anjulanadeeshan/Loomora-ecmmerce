@@ -8,13 +8,10 @@ const AdminNavbar = () => {
   const [visible, setVisible] = useState(false);
   
   const handleLogout = () => {
-    if (window.confirm('Are you sure you want to logout?')) {
-      localStorage.removeItem('adminToken');
-      localStorage.removeItem('adminUser');
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      navigate('/');
-    }
+    localStorage.removeItem('adminToken');
+    localStorage.removeItem('adminUser');
+    setVisible(false);
+    navigate('/admin/login', { replace: true });
   };
 
   const navItems = [
@@ -55,6 +52,7 @@ const AdminNavbar = () => {
         </Link>
         
         <button
+          type="button"
           onClick={handleLogout}
           className="rounded-full bg-[#1d1a17] px-5 py-2 text-xs font-semibold uppercase tracking-wider text-white transition hover:bg-[#7d263d]"
         >
@@ -71,23 +69,25 @@ const AdminNavbar = () => {
 
       {/* Sidebar menu for small screens */}
       <div
-        className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${
-          visible ? "w-full" : "w-0"
+        className={`fixed inset-0 z-[60] overflow-y-auto bg-[#fffdf9] transition-transform duration-300 sm:hidden ${
+          visible ? "translate-x-0" : "pointer-events-none translate-x-full"
         }`}
+        aria-hidden={!visible}
       >
-        <div className="flex flex-col text-gray-600">
-          <div
+        <div className="flex min-h-full flex-col text-[#4f4943]">
+          <button
+            type="button"
             onClick={() => setVisible(false)}
-            className="flex items-center gap-4 p-3 cursor-pointer"
+            className="flex items-center gap-4 border-b border-[#ded7cc] p-5 text-left"
           >
             <img src={assets.dropdown_icon} className="h-4 rotate-180" alt="" />
             <p>Back</p>
-          </div>
+          </button>
           {navItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
-              className="py-2 pl-6 border"
+              className={`border-b border-[#ded7cc] px-6 py-4 ${location.pathname === item.path ? 'bg-[#f3eee5] font-semibold text-[#7d263d]' : ''}`}
               onClick={() => setVisible(false)}
             >
               {item.label}
@@ -95,17 +95,15 @@ const AdminNavbar = () => {
           ))}
           <Link
             to="/"
-            className="py-2 pl-6 border"
+            className="border-b border-[#ded7cc] px-6 py-4"
             onClick={() => setVisible(false)}
           >
             VIEW STORE
           </Link>
           <button
-            onClick={() => {
-              setVisible(false);
-              handleLogout();
-            }}
-            className="py-2 pl-6 border text-left text-red-600"
+            type="button"
+            onClick={handleLogout}
+            className="border-b border-[#ded7cc] px-6 py-4 text-left font-semibold text-[#7d263d]"
           >
             LOGOUT
           </button>
