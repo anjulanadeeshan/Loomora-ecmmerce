@@ -1,7 +1,9 @@
 import axios from 'axios';
 
-// Backend API base URL
-export const API_URL = 'http://localhost:4000';
+// Backend API base URL. VITE_API_URL is injected by Netlify during the build.
+export const API_URL = (
+    import.meta.env.VITE_API_URL || 'http://localhost:4000'
+).replace(/\/$/, '');
 
 // Create axios instance with default config
 const api = axios.create({

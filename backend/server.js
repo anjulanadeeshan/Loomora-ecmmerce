@@ -12,46 +12,64 @@ const orderRouter = require('./routes/orderRoute');
 const feedbackRouter = require('./routes/feedbackRoute');
 const newsletterRouter = require('./routes/newsletterRoute');
 
-// Initialize Express app
 const app = express();
 const PORT = process.env.PORT || 4000;
+const HOST = process.env.HOST || '0.0.0.0';
 
-// Connect to Database
+const normalizeOrigin = (origin) => origin?.trim().replace(/\/$/, '');
+const configuredOrigins = [
+    process.env.FRONTEND_URL,
+    ...(process.env.CORS_ORIGINS || '').split(','),
+]
+    .map(normalizeOrigin)
+    .filter(Boolean);
+
+const allowedOrigins = new Set([
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'http://localhost:5175',
+    'http://localhost:3000',
+    ...configuredOrigins,
+]);
+
 connectDB();
 
-// Middleware
 app.use(express.json());
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175', 'http://localhost:3000'],
-    credentials: true
+    origin(origin, callback) {
+        // Requests without an Origin header include health checks and API clients.
+        if (!origin || allowedOrigins.has(normalizeOrigin(origin))) {
+            return callback(null, true);
+        }
+
+        const error = new Error('Origin is not allowed by CORS');
+        error.status = 403;
+        return callback(error);
+    },
+    credentials: true,
 }));
 
-// Serve static files from uploads folder
 app.use('/uploads', express.static('uploads'));
 
-// API Routes
 app.use('/api/user', userRouter);
 app.use('/api/product', productRouter);
 app.use('/api/order', orderRouter);
 app.use('/api/feedback', feedbackRouter);
 app.use('/api/newsletter', newsletterRouter);
 
-// Health check endpoint
 app.get('/', (req, res) => {
     res.send('API is running...');
 });
 
-// Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).json({ 
-        success: false, 
-        message: err.message || 'Something went wrong!' 
+    res.status(err.status || 500).json({
+        success: false,
+        message: err.message || 'Something went wrong!',
     });
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`✓ Server is running on port ${PORT}`);
-    console.log(`✓ Frontend CORS enabled for localhost:5173 and localhost:3000`);
+app.listen(PORT, HOST, () => {
+    console.log(`Server is running at http://${HOST}:${PORT}`);
+    console.log(`Allowed frontend origins: ${[...allowedOrigins].join(', ')}`);
 });
