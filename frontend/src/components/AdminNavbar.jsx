@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { assets } from '../assets/frontend_assets/assets';
 
@@ -22,8 +22,30 @@ const AdminNavbar = () => {
     { path: '/admin/feedback', label: 'FEEDBACK' }
   ];
 
+  useEffect(() => {
+    setVisible(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!visible) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setVisible(false);
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [visible]);
+
   return (
-    <div className="fixed inset-x-0 top-0 z-50 flex h-[76px] items-center justify-between border-b border-[#ded7cc] bg-[#fffdf9]/90 px-4 font-medium backdrop-blur-xl sm:px-[5vw] md:px-[7vh] lg:px-[9vh]">
+    <>
+      <div className="fixed inset-x-0 top-0 z-50 flex h-[76px] items-center justify-between border-b border-[#ded7cc] bg-[#fffdf9]/90 px-4 font-medium backdrop-blur-xl sm:px-[5vw] md:px-[7vh] lg:px-[9vh]">
       <Link to='/admin/dashboard'>
         <img src={assets.loomora_logo} className="h-10 w-auto object-contain" alt="Loomora" />
       </Link>
@@ -54,17 +76,36 @@ const AdminNavbar = () => {
         <button
           type="button"
           onClick={handleLogout}
-          className="rounded-full bg-[#1d1a17] px-5 py-2 text-xs font-semibold uppercase tracking-wider text-white transition hover:bg-[#7d263d]"
+          className="grid h-10 w-10 place-items-center rounded-full bg-[#1d1a17] text-white transition hover:bg-[#7d263d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7d263d] focus-visible:ring-offset-2"
+          aria-label="Log out"
+          title="Log out"
         >
-          Logout
+          <svg
+            className="h-[18px] w-[18px]"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M10 17l5-5-5-5" />
+            <path d="M15 12H3" />
+            <path d="M15 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4" />
+          </svg>
         </button>
         
-        <img
+        <button
+          type="button"
           onClick={() => setVisible(true)}
-          src={assets.menu_icon}
-          className="w-5 cursor-pointer sm:hidden"
-          alt="Menu"
-        />
+          className="grid h-10 w-10 place-items-center rounded-full border border-[#ded7cc] sm:hidden"
+          aria-label="Open admin menu"
+          aria-expanded={visible}
+        >
+          <img src={assets.menu_icon} className="w-5" alt="" />
+        </button>
+      </div>
       </div>
 
       {/* Sidebar menu for small screens */}
@@ -109,7 +150,7 @@ const AdminNavbar = () => {
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

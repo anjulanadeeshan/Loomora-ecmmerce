@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { resetPassword } from '../services/userService';
 import { toast } from 'react-toastify';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import PasswordVisibilityButton from '../components/PasswordVisibilityButton';
 
 const ResetPassword = () => {
   const [searchParams] = useSearchParams();
@@ -12,6 +13,8 @@ const ResetPassword = () => {
     confirmPassword: ''
   });
   const [loading, setLoading] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -99,27 +102,43 @@ const ResetPassword = () => {
           required
         />
 
-        <input
-          type="password"
-          name="newPassword"
-          className='w-full rounded-xl border px-4 py-3'
-          placeholder='New Password (min 8 characters)'
-          value={formData.newPassword}
-          onChange={handleChange}
-          required
-          minLength={8}
-        />
+        <div className='relative w-full'>
+          <input
+            type={showNewPassword ? 'text' : 'password'}
+            name="newPassword"
+            className='w-full rounded-xl border py-3 pl-4 pr-12'
+            placeholder='New Password (min 8 characters)'
+            value={formData.newPassword}
+            onChange={handleChange}
+            autoComplete='new-password'
+            required
+            minLength={8}
+          />
+          <PasswordVisibilityButton
+            visible={showNewPassword}
+            onToggle={() => setShowNewPassword((value) => !value)}
+            label='new password'
+          />
+        </div>
 
-        <input
-          type="password"
-          name="confirmPassword"
-          className='w-full rounded-xl border px-4 py-3'
-          placeholder='Confirm New Password'
-          value={formData.confirmPassword}
-          onChange={handleChange}
-          required
-          minLength={8}
-        />
+        <div className='relative w-full'>
+          <input
+            type={showConfirmPassword ? 'text' : 'password'}
+            name="confirmPassword"
+            className='w-full rounded-xl border py-3 pl-4 pr-12'
+            placeholder='Confirm New Password'
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            autoComplete='new-password'
+            required
+            minLength={8}
+          />
+          <PasswordVisibilityButton
+            visible={showConfirmPassword}
+            onToggle={() => setShowConfirmPassword((value) => !value)}
+            label='password confirmation'
+          />
+        </div>
 
         <button
           type='submit'

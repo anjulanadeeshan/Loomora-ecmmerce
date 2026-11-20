@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { assets } from '../assets/frontend_assets/assets.js'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import ShopContext from '../context/ShopContext.js'
@@ -6,6 +6,8 @@ import ShopContext from '../context/ShopContext.js'
 const NavBar = () => {
   const [visible, setVisible] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
+  const [accountMenuOpen, setAccountMenuOpen] = useState(false)
+  const accountMenuRef = useRef(null)
   const { showSearch, setShowSearch, getCartCount, user, logout, navigate } = useContext(ShopContext)
   const location = useLocation()
   const isHome = location.pathname === '/'
@@ -19,7 +21,28 @@ const NavBar = () => {
 
   useEffect(() => {
     setVisible(false)
+    setAccountMenuOpen(false)
   }, [location.pathname])
+
+  useEffect(() => {
+    if (!accountMenuOpen) return
+
+    const handleOutsideClick = (event) => {
+      if (!accountMenuRef.current?.contains(event.target)) {
+        setAccountMenuOpen(false)
+      }
+    }
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') setAccountMenuOpen(false)
+    }
+
+    document.addEventListener('pointerdown', handleOutsideClick)
+    document.addEventListener('keydown', handleEscape)
+    return () => {
+      document.removeEventListener('pointerdown', handleOutsideClick)
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [accountMenuOpen])
 
   useEffect(() => {
     if (!visible) return
@@ -126,25 +149,43 @@ const NavBar = () => {
             {cartCount > 0 && <span className='absolute -right-1 -top-1 grid h-4 min-w-4 place-items-center rounded-full bg-[#7d263d] px-1 text-[9px] text-white'>{cartCount}</span>}
           </Link>
 
-          <div className='group relative'>
-            <Link
-              to={user ? '#' : '/login'}
-              className={iconButtonClass}
-              aria-label={user ? 'Account menu' : 'Sign in'}
-              title={user ? 'Account' : 'Log in'}
-            >
-              <img
-                src={assets.profile_icon}
-                className={`w-4 ${isHome ? 'brightness-0 invert' : ''}`}
-                alt=''
-              />
-            </Link>
+          <div ref={accountMenuRef} className='group relative'>
+            {user ? (
+              <button
+                type='button'
+                onClick={() => setAccountMenuOpen((value) => !value)}
+                className={iconButtonClass}
+                aria-label='Account menu'
+                aria-expanded={accountMenuOpen}
+                aria-haspopup='menu'
+                title='Account'
+              >
+                <img
+                  src={assets.profile_icon}
+                  className={`w-4 ${isHome ? 'brightness-0 invert' : ''}`}
+                  alt=''
+                />
+              </button>
+            ) : (
+              <Link
+                to='/login'
+                className={iconButtonClass}
+                aria-label='Sign in'
+                title='Log in'
+              >
+                <img
+                  src={assets.profile_icon}
+                  className={`w-4 ${isHome ? 'brightness-0 invert' : ''}`}
+                  alt=''
+                />
+              </Link>
+            )}
             {user && (
-              <div className='invisible absolute right-0 top-full pt-3 opacity-0 transition-all group-hover:visible group-hover:opacity-100'>
-                <div className='surface-card flex w-44 flex-col gap-1 p-3 text-sm text-[#746d65]'>
+              <div className={`${accountMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'} absolute right-0 top-full pt-3 transition-all group-hover:visible group-hover:opacity-100`}>
+                <div role='menu' className='surface-card flex w-44 flex-col gap-1 p-3 text-sm text-[#746d65] shadow-xl'>
                   <p className='border-b border-[#ded7cc] px-2 pb-2 text-xs font-semibold text-[#1d1a17]'>{user.name}</p>
-                  <button type='button' onClick={() => navigate('/orders')} className='rounded-lg px-2 py-2 text-left hover:bg-[#f3eee5] hover:text-[#7d263d]'>Orders</button>
-                  <button type='button' onClick={logout} className='rounded-lg px-2 py-2 text-left hover:bg-[#f3eee5] hover:text-[#7d263d]'>Logout</button>
+                  <button type='button' role='menuitem' onClick={() => { setAccountMenuOpen(false); navigate('/orders') }} className='rounded-lg px-2 py-2 text-left hover:bg-[#f3eee5] hover:text-[#7d263d]'>Orders</button>
+                  <button type='button' role='menuitem' onClick={() => { setAccountMenuOpen(false); logout() }} className='rounded-lg px-2 py-2 text-left hover:bg-[#f3eee5] hover:text-[#7d263d]'>Logout</button>
                 </div>
               </div>
             )}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { adminLogin } from '../../services/userService';
 import { toast } from 'react-toastify';
+import PasswordVisibilityButton from '../../components/PasswordVisibilityButton';
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ const AdminLogin = () => {
     password: ''
   });
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -76,17 +78,23 @@ const AdminLogin = () => {
               <label htmlFor="password" className="sr-only">
                 Password
               </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                value={formData.password}
-                onChange={handleChange}
-                className="relative mt-3 block w-full rounded-xl border px-4 py-3 text-sm text-[#1d1a17] placeholder-[#8c847b]"
-                placeholder="Password"
-              />
+              <div className="relative mt-3">
+                <input
+                  id="password"
+                  name="password"
+                  type={showPassword ? 'text' : 'password'}
+                  autoComplete="current-password"
+                  required
+                  value={formData.password}
+                  onChange={handleChange}
+                  className="relative block w-full rounded-xl border py-3 pl-4 pr-12 text-sm text-[#1d1a17] placeholder-[#8c847b]"
+                  placeholder="Password"
+                />
+                <PasswordVisibilityButton
+                  visible={showPassword}
+                  onToggle={() => setShowPassword((value) => !value)}
+                />
+              </div>
             </div>
           </div>
 

@@ -217,7 +217,6 @@ const AdminDashboard = () => {
                 <div className="flex items-center justify-between px-6 py-5 border-b border-[#ded7cc]/60">
                   <div>
                     <h2 className="text-lg font-bold text-[#1d1a17]">Recent Orders</h2>
-                    <p className="text-xs text-[#746d65] mt-0.5">Latest customer transactions and fulfillment progress</p>
                   </div>
                   <Link
                     to="/admin/orders"
@@ -301,8 +300,7 @@ const AdminDashboard = () => {
               
               {/* Management Shortcuts */}
               <div className="rounded-2xl border border-[#ded7cc]/80 bg-white p-6 shadow-[0_8px_24px_rgba(29,26,23,0.04)]">
-                <h2 className="text-base font-bold text-[#1d1a17] mb-1">Management Suite</h2>
-                <p className="text-xs text-[#746d65] mb-5">Quick access to catalogue, fulfillment, and customer tools</p>
+                <h2 className="mb-5 text-base font-bold text-[#1d1a17]">Management Suite</h2>
 
                 <div className="flex flex-col gap-3">
                   <Link

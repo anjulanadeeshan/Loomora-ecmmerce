@@ -3,6 +3,7 @@ import ShopContext from '../context/ShopContext.js'
 import { loginUser, registerUser, adminLogin } from '../services/userService'
 import { toast } from 'react-toastify'
 import api from '../config/api'
+import PasswordVisibilityButton from '../components/PasswordVisibilityButton'
 
 const Login = () => {
 
@@ -15,6 +16,7 @@ const Login = () => {
     password: ''
   });
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [profileFile, setProfileFile] = useState(null);
   const [profilePreview, setProfilePreview] = useState('');
 
@@ -173,19 +175,26 @@ const Login = () => {
           onChange={handleChange}
           required
         />
-        <input 
-          type="password" 
-          name="password"
-          className='w-full rounded-xl border px-4 py-3'
-          placeholder='Password' 
-          value={formData.password}
-          onChange={handleChange}
-          required
-          minLength={8}
-        />
+        <div className='relative w-full'>
+          <input
+            type={showPassword ? 'text' : 'password'}
+            name="password"
+            className='w-full rounded-xl border py-3 pl-4 pr-12'
+            placeholder='Password'
+            value={formData.password}
+            onChange={handleChange}
+            autoComplete={currentState === 'Login' ? 'current-password' : 'new-password'}
+            required
+            minLength={8}
+          />
+          <PasswordVisibilityButton
+            visible={showPassword}
+            onToggle={() => setShowPassword((value) => !value)}
+          />
+        </div>
 
         {/* Forgot Password & Toggle Link */}
-        <div className='w-full flex justify-between text-sm -mt-2'>
+        <div className='-mt-2 flex w-full items-center justify-between text-sm'>
             {!isAdminLogin && (
               <p 
                 onClick={() => navigate('/forgot-password')} 
@@ -194,7 +203,7 @@ const Login = () => {
                 Forgot your password?
               </p>
             )}
-            <div className={isAdminLogin ? 'w-full' : ''}>
+            <div className={isAdminLogin ? 'ml-auto text-right' : ''}>
             {
                 currentState === 'Login'
                 ? <p onClick={()=>{ setCurrentState('Sign Up'); setIsAdminLogin(false); }} className='cursor-pointer'>Create account</p>
