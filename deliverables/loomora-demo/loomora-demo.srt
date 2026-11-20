@@ -1,0 +1,56 @@
+1
+00:00:00,000 --> 00:00:06,000
+Meet Loomora, my full-stack fashion e-commerce project, connecting a modern storefront with practical admin tools.
+
+2
+00:00:06,000 --> 00:00:12,000
+Customers can browse the collection and narrow their choices using search, categories, and price sorting.
+
+3
+00:00:12,000 --> 00:00:19,000
+Cloudinary-hosted images bring the catalogue to life, with a consistent visual experience across the store.
+
+4
+00:00:19,000 --> 00:00:25,000
+Product pages present images, descriptions, prices, and available sizes.
+
+5
+00:00:25,000 --> 00:00:32,000
+Select a size, add an item, and adjust quantities in the shopping bag.
+
+6
+00:00:32,000 --> 00:00:38,000
+Checkout brings delivery information, order totals, and payment choices together.
+
+7
+00:00:38,000 --> 00:00:43,000
+Customers can also review their previous orders and current status.
+
+8
+00:00:43,000 --> 00:00:50,000
+Account screens include password visibility and recovery, alongside a newsletter interface integrated with Brevo.
+
+9
+00:00:50,000 --> 00:00:56,000
+Behind the storefront, the admin dashboard summarizes revenue, orders, products, and registered customers.
+
+10
+00:00:56,000 --> 00:01:02,000
+Recent orders and management shortcuts keep essential information easy to reach.
+
+11
+00:01:02,000 --> 00:01:09,000
+Administrators can review the catalogue, search orders, and filter by fulfillment or payment status.
+
+12
+00:01:09,000 --> 00:01:16,000
+Order controls, customer records, and feedback management complete the administrative workspace.
+
+13
+00:01:16,000 --> 00:01:23,000
+The responsive interface pairs a Netlify frontend with a Docker-based backend running on a VPS.
+
+14
+00:01:23,000 --> 00:01:30,000
+I'm Anjula Nadeeshan. Explore Loomora through the links in this post. I'd love your feedback.
+

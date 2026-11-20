@@ -134,9 +134,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
-      {/* ----------------- Newsletter Section ----------------- */}
-      <div className='page-shell'><NewsLetter /></div>
       
     </main>
   )
